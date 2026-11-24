@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sherry Huynh - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'serif'],
+          },
+          colors: {
+            paper: 'rgb(var(--paper-rgb) / <alpha-value>)',
+            ink: 'rgb(var(--ink-rgb) / <alpha-value>)',
+            cobalt: 'rgb(var(--cobalt-rgb) / <alpha-value>)',
+            crimson: 'rgb(var(--crimson-rgb) / <alpha-value>)',
+            muted: 'rgb(var(--muted-rgb) / <alpha-value>)',
+            line: 'rgb(var(--line-rgb) / <alpha-value>)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --paper: #F7F6F2;
+      --paper-rgb: 247 246 242;
+      --ink: #141413;
+      --ink-rgb: 20 20 19;
+      --cobalt: #1D4ED8;
+      --cobalt-rgb: 29 78 216;
+      --crimson: #D93829;
+      --crimson-rgb: 217 56 41;
+      --muted: #6E6D68;
+      --muted-rgb: 110 109 104;
+      --line: #DCDAD3;
+      --line-rgb: 220 218 211;
+    }
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+    }
+    body.dark-mode {
+      --paper: #171817;
+      --paper-rgb: 23 24 23;
+      --ink: #F4F2EB;
+      --ink-rgb: 244 242 235;
+      --cobalt: #82A6FF;
+      --cobalt-rgb: 130 166 255;
+      --crimson: #FF8376;
+      --crimson-rgb: 255 131 118;
+      --muted: #AAA99F;
+      --muted-rgb: 170 169 159;
+      --line: #3B3D39;
+      --line-rgb: 59 61 57;
+    }
+    body.dark-mode [class~="bg-white"],
+    body.dark-mode [class~="bg-stone-200"] {
+      background-color: #222421;
+    }
+    body.dark-mode [class~="bg-white/50"] {
+      background-color: rgba(255, 255, 255, 0.035);
+    }
+    body.dark-mode [class~="text-stone-400"] {
+      color: #AAA99F;
+    }
+    body.dark-mode [class~="text-stone-500"] {
+      color: #92938B;
+    }
+    body.dark-mode [class~="border-stone-600"] {
+      border-color: #666861;
+    }
+    body.dark-mode [class~="border-stone-800"] {
+      border-color: #3B3D39;
+    }
+    body.dark-mode #contact [class~="text-stone-400"] {
+      color: #141413;
+    }
+    .theme-moon,
+    body.dark-mode .theme-sun {
+      display: none;
+    }
+    body.dark-mode .theme-moon {
+      display: block;
+    }
+    .vertical-label {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+    .editorial-grid {
+      background-image: linear-gradient(to right, rgba(20, 20, 19, 0.04) 1px, transparent 1px);
+      background-size: 25% 100%;
+    }
+    .experience-photo-frame {
+      aspect-ratio: 4 / 3;
+    }
+    .experience-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-cobalt selection:text-white">
+
+  <!-- Top Minimalist Bar -->
+  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between text-xs uppercase tracking-widest font-semibold">
+      <a href="#" class="flex items-center gap-2 text-ink">
+        <span class="w-2.5 h-2.5 rounded-full bg-crimson inline-block"></span>
+        <span>Sherry Huynh - Portfolio</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <nav class="hidden md:flex items-center gap-6 text-muted mr-4">
+          <a href="#about" class="hover:text-ink transition">About</a>
+          <a href="#profile" class="hover:text-ink transition">My Profile</a>
+          <a href="#skills" class="hover:text-ink transition">Skills</a>
+          <a href="#contact" class="hover:text-crimson transition">Contact</a>
+        </nav>
+        <button id="theme-toggle" type="button" class="border border-ink p-1.5 rounded-full hover:bg-ink hover:text-paper transition" aria-label="Switch to dark mode" aria-pressed="false" title="Light mode">
+          <svg class="theme-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          </svg>
+          <svg class="theme-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.5 8.5 0 1 0 20.2 15.2Z"></path>
+          </svg>
+        </button>
+        <button id="language-toggle" type="button" class="border border-ink px-3 py-1.5 rounded-full hover:bg-ink hover:text-paper transition" aria-label="Switch language to German">DE</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative border-b border-line editorial-grid">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-[2.8rem] lg:py-[4.2rem]">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Column: Editorial Typography -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-bold tracking-widest uppercase text-cobalt">2026 Edition</span>
+            <span class="h-px w-12 bg-cobalt"></span>
+            <span class="text-xs uppercase tracking-widest text-muted">Social Media & Multimedia Marketer</span>
+          </div>
+
+          <div class="relative inline-block">
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95] text-ink">
+              Hello, I’m<br/>
+              <span class="text-cobalt relative inline-block">
+                Sherry Huynh
+                <!-- Hand-drawn SVG oval accent inspired by reference -->
+                <svg class="absolute -inset-x-3 -inset-y-2 w-[calc(100%+1.5rem)] h-[calc(100%+1rem)] pointer-events-none text-cobalt/70" viewBox="0 0 320 90" fill="none">
+                  <ellipse cx="160" cy="45" rx="154" ry="38" stroke="currentColor" stroke-width="2" transform="rotate(-1.5 160 45)"/>
+                </svg>
+              </span>
+            </h1>
+          </div>
+
+          <p class="text-lg sm:text-xl text-ink/80 max-w-xl leading-relaxed font-medium">
+            Social media strategist obsessed with impact - turning trends into growth and data into direction. Blending creativity with smart strategy for campaigns that spark conversation and build brand loyalty.
+          </p>
+
+          <!-- Key Numbers Strip -->
+          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-line max-w-xl">
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-ink">+69<span class="text-crimson">%</span></div>
+              <p class="text-xs text-muted mt-1 uppercase tracking-wider">IG Follower Growth</p>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-ink">10K<span class="text-cobalt">+</span></div>
+              <p class="text-xs text-muted mt-1 uppercase tracking-wider">2-Week Campaign Reach</p>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-ink">400<span class="text-crimson">+</span></div>
+              <p class="text-xs text-muted mt-1 uppercase tracking-wider">Visual Assets Created</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Asymmetric Editorial Image Composition -->
+        <div class="lg:col-span-5 relative flex items-center justify-center">
+          <div class="relative w-full max-w-md">
+            <!-- Red editorial accent dot -->
+            <div class="w-14 h-14 rounded-full bg-crimson absolute -top-5 -left-5 z-10 shadow-sm"></div>
+            
+            <!-- Main Portrait -->
+            <div class="aspect-[15/17] overflow-hidden bg-stone-200 border border-ink/10 shadow-sm">
+              <img src="images/hero_portrait.jpg" alt="Sherry Huynh Portrait" class="w-full h-full object-cover object-center" />
+            </div>
+
+            <!-- Vertical rotated label on right edge -->
+            <div class="hidden sm:flex items-center gap-3 absolute -right-10 bottom-6">
+              <span class="vertical-label text-xs font-extrabold uppercase tracking-[0.25em] text-crimson">
+                portfolio
+              </span>
+            </div>
+
+            <!-- Floating caption card -->
+            <div class="bg-paper border border-ink px-4 py-3 mt-4 flex items-center justify-between text-xs">
+              <span class="font-bold uppercase tracking-wider">Munich</span>
+              <span class="text-muted">Open to relocation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 01: ABOUT ME -->
+  <section id="about" class="border-b border-line">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-[3.5rem] lg:py-[4.9rem]">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Oversized Overlapping Index Number -->
+        <div class="lg:col-span-4 relative">
+          <div class="relative inline-flex items-center">
+            <span class="text-8xl sm:text-9xl font-extrabold tracking-tighter text-ink/10 select-none">01</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-cobalt -ml-10">about me</h2>
+          </div>
+          <p class="mt-4 text-sm text-muted leading-relaxed">
+            Multilingual marketer working across English, German (B2/C1), and Vietnamese - bridging international audiences through community storytelling, structured workflows, and data-backed content.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">Instagram & Reels</span>
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">Canva & CapCut</span>
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">Shopify</span>
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">plentymarkets</span>
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">Competitive Analysis</span>
+          </div>
+        </div>
+
+        <!-- Photo Collage & Philosophy -->
+        <div class="lg:col-span-8 grid sm:grid-cols-12 gap-6 items-center">
+          <div class="sm:col-span-5">
+            <div class="aspect-[3/4] overflow-hidden border border-ink/10 bg-stone-200">
+              <img src="images/about_portrait.jpg" alt="Sherry Huynh" class="w-full h-full object-cover object-center" />
+            </div>
+          </div>
+          <div class="sm:col-span-7 space-y-6">
+            <div class="space-y-3 text-sm sm:text-base text-ink/85 leading-relaxed">
+              <p>
+                Whether scaling multi-country Instagram channels across Europe and the US, leading a campus marketing team of five in Germany, or building 279+ e-commerce visuals from scratch, I focus on clarity, consistency, and measurable reach.
+              </p>
+              <p class="font-semibold text-ink">
+                Helping brands connect, grow, and stand out in crowded feeds.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02: MY PROFILE (Experience / Highlighted Projects / Education) -->
+  <section id="profile" class="border-b border-line">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 pt-[3.5rem] lg:pt-[4.9rem] pb-2">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div class="relative inline-flex items-center">
+          <span class="text-8xl sm:text-9xl font-extrabold tracking-tighter text-ink/10 select-none">02</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-ink -ml-10">my profile</h2>
+        </div>
+        <div role="tablist" class="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wider">
+          <button role="tab" data-tab="experience" onclick="showProfileTab('experience')" class="profile-tab bg-ink text-paper px-4 py-2 rounded-full transition">Experience</button>
+          <button role="tab" data-tab="projects" onclick="showProfileTab('projects')" class="profile-tab border border-ink/30 text-ink hover:border-ink px-4 py-2 rounded-full transition">Highlighted Projects</button>
+          <button role="tab" data-tab="education" onclick="showProfileTab('education')" class="profile-tab border border-ink/30 text-ink hover:border-ink px-4 py-2 rounded-full transition">Education</button>
+        </div>
+      </div>
+    </div>
+
+  <!-- SECTION 02: EXPERIENCE TIMELINE -->
+  <section id="experience" data-panel="experience" class="profile-panel border-b border-line bg-white/50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-[3.5rem] lg:py-[4.9rem]">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="relative inline-flex items-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-ink">experience</h2>
+        </div>
+        <p class="text-sm text-muted max-w-md">
+          International agency/NGO communication, e-commerce content operations, and student organization leadership.
+        </p>
+      </div>
+
+      <div class="space-y-12">
+
+        <!-- Role 1: Jesus Revolution (Latest) -->
+        <div class="grid lg:grid-cols-12 gap-8 pb-12 border-b border-line items-start">
+          <div class="lg:col-span-3">
+            <span class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-crimson">
+              <span class="w-2 h-2 rounded-full bg-crimson"></span>
+              04.2026 - 08.2026
+            </span>
+            <h3 class="text-xl font-extrabold text-ink mt-2">Jesus Revolution</h3>
+            <p class="text-sm text-muted">Oslo, Norway</p>
+          </div>
+          <div class="lg:col-span-6 space-y-4">
+            <h4 class="text-2xl font-bold text-cobalt">Marketing & Communication Intern</h4>
+            <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
+              <li>Developed and executed social media strategies for Instagram channels across <strong>5 national bases</strong> (US, Italy, Norway, Ukraine, Belgium).</li>
+              <li>Collaborated with global team leaders to align strategy across diverse cultural contexts and redirect content direction.</li>
+              <li>Performed competitive analysis of internal and external data across all 5 Instagram channels.</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="aspect-square overflow-hidden border border-ink/10 bg-stone-200">
+              <img src="images/exp_jesus_revolution.jpg" alt="Sherry with colleagues at Jesus Revolution" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Role 2: Barthelmes GmbH -->
+        <div class="grid lg:grid-cols-12 gap-8 pb-12 border-b border-line items-start">
+          <div class="lg:col-span-3">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-muted">E-Commerce & Social</span>
+            <h3 class="text-xl font-extrabold text-ink mt-2">Barthelmes GmbH</h3>
+            <p class="text-sm text-muted">Germany</p>
+          </div>
+          <div class="lg:col-span-6 space-y-4">
+            <h4 class="text-2xl font-bold text-ink">Social Media Assistant</h4>
+            <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
+              <li>Designed and managed product content for online stores using <strong>Shopify, plentymarkets, and Canva</strong>.</li>
+              <li>Created <strong>279+ product visuals</strong> and updated product listings with accurate, compelling descriptions.</li>
+              <li>Organized product collections for easier navigation, improved UX, and consistent storefront branding.</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="aspect-[16/10] overflow-hidden border border-ink/10">
+              <img src="images/exp_barthelmes.jpg" alt="Working at Barthelmes GmbH" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Role 3: DEGIS Schmalkalden -->
+        <div class="grid lg:grid-cols-12 gap-8 pb-12 border-b border-line items-start">
+          <div class="lg:col-span-3">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-muted">1.5+ Years Leadership</span>
+            <h3 class="text-xl font-extrabold text-ink mt-2">DEGIS Schmalkalden</h3>
+            <p class="text-sm text-muted">Schmalkalden, Germany</p>
+          </div>
+          <div class="lg:col-span-6 space-y-4">
+            <h4 class="text-2xl font-bold text-ink">Vice President of Media & Marketing Department</h4>
+            <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
+              <li>Led media strategy and a team of 5; boosted Instagram reach by <strong>43%</strong> and followers by <strong>69%</strong>.</li>
+              <li>Built structured marketing workflows and produced <strong>130+ promotional designs</strong> and Reels across Instagram, Facebook, and WhatsApp.</li>
+              <li>Drove flagship student events including <em>One World Fiesta 2024</em> and the DAAD-funded <em>Buddy Program</em>.</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="experience-photo-frame overflow-hidden border border-ink/10 bg-stone-200">
+              <img src="images/exp_degis_schmalkalden.png" alt="DEGIS Schmalkalden community celebration" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Role 4: STEP Forward Education -->
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-3">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-muted">Events & Research</span>
+            <h3 class="text-xl font-extrabold text-ink mt-2">STEP Forward Education</h3>
+            <p class="text-sm text-muted">Vietnam</p>
+          </div>
+          <div class="lg:col-span-6 space-y-4">
+            <h4 class="text-2xl font-bold text-ink">Communication & Event Supporter</h4>
+            <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
+              <li>Created content and photographed <strong>20+ educational events</strong> and developed activities for 20+ workshops.</li>
+              <li>Assisted a Facebook campaign that gained <strong>1,000+ likes in 3 weeks</strong>.</li>
+              <li>Conducted surveys and interviews with <strong>2,000+ participants</strong>.</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="aspect-[16/10] overflow-hidden border border-ink/10">
+              <img src="images/exp_step.jpg" alt="STEP Forward Education Workshop" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03: SELECTED WORK (WITH REAL PORTFOLIO IMAGES) -->
+  <section id="projects" data-panel="projects" class="profile-panel hidden border-b border-line">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-[3.5rem] lg:py-[4.9rem]">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="relative inline-flex items-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-cobalt">highlighted projects</h2>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wider">
+          <button onclick="filterProjects('all', this)" class="filter-btn bg-ink text-paper px-4 py-2 rounded-full transition">All Projects</button>
+          <button onclick="filterProjects('campaigns', this)" class="filter-btn border border-ink/30 text-ink hover:border-ink px-4 py-2 rounded-full transition">Campaigns & Events</button>
+          <button onclick="filterProjects('series', this)" class="filter-btn border border-ink/30 text-ink hover:border-ink px-4 py-2 rounded-full transition">Content Series</button>
+          <button onclick="filterProjects('ecommerce', this)" class="filter-btn border border-ink/30 text-ink hover:border-ink px-4 py-2 rounded-full transition">E-Commerce</button>
+        </div>
+      </div>
+
+      <div class="space-y-24">
+
+        <!-- CASE STUDY 03.1: One World Fiesta 2024 -->
+        <article data-category="campaigns" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-crimson">1.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.1 / Flagship Cultural Event</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">One World Fiesta 2024</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Coordinated Schmalkalden’s largest cultural festival with a 30-member team, uniting students from 4 continents and 10+ countries through fashion, dance, cuisine, and music.
+            </p>
+            <div class="bg-white p-4 border border-line space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-muted">Event Attendance</span>
+                <span class="font-extrabold text-ink">300+ Guests</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">Instagram Reach (2 Weeks)</span>
+                <span class="font-extrabold text-cobalt">2,500 → 10,000+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <img src="images/proj_fiesta_poster.jpg" alt="One World Fiesta Main Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_fiesta_timeline.jpg" alt="One World Fiesta Schedule" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_fiesta_cuisine.jpg" alt="National Cuisine Promo" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_fiesta_photo1.jpg" alt="One World Fiesta Crowd" class="w-full aspect-[4/3] object-cover border border-ink/10 sm:col-span-2 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_fiesta_photo2.jpg" alt="One World Fiesta Stage Performance" class="w-full aspect-[4/3] object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+        <!-- CASE STUDY 03.2: Buddy Program 2024 -->
+        <article data-category="campaigns" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-cobalt">2.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.2 / DAAD STIBET Initiative</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">Hochschule Schmalkalden Buddy Program</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Collaborated with the University International Office and DEGIS national team to lead Instagram recruitment and community storytelling for international student integration.
+            </p>
+            <div class="bg-white p-4 border border-line space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-muted">Community Supported</span>
+                <span class="font-extrabold text-ink">20 Mentors & ~100 Mentees</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">Funding Partner</span>
+                <span class="font-extrabold text-cobalt">DAAD STIBET</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <img src="images/proj_buddy_poster.jpg" alt="Buddy Program Instagram Graphic" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_buddy_photo1.jpg" alt="Buddy Program Orientation" class="w-full aspect-[4/3] sm:aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_buddy_photo2.jpg" alt="Buddy Program Certificate Ceremony" class="w-full aspect-[4/3] sm:aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+        <!-- CASE STUDY 03.3: "Are You New Here?" Series -->
+        <article data-category="series" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-crimson">3.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.3 / Instagram Content Series</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">“Are You New Here?” Onboarding Guide</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Created an informational Instagram carousel series for Winter Semester 24/25 arrivals, turning real student questions on local shopping, events, gyms, and English-speaking doctors into digestible visual guides.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <img src="images/proj_new_cover.jpg" alt="Are You New Here Cover" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_new_1.jpg" alt="Part 1 Where should I buy" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_new_2.jpg" alt="Part 2 Cool activities" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_new_3.jpg" alt="Part 3 English speaking doctors" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+        <!-- CASE STUDY 03.4: Discovering Thuringia Excursions -->
+        <article data-category="campaigns series" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-cobalt">4.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.4 / Event Promotion Design</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">Discovering Thuringia Series</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Designed multi-channel promotional posters for student excursions to Eisenach (Wartburg Castle), Erfurt Zoo, Laser Tag, and the Erfurt Christmas Market, consistently driving 20-30 attendees per trip.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <img src="images/proj_thuringia_1.jpg" alt="Trip to Eisenach Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_thuringia_2.jpg" alt="Erfurt Zoo Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_thuringia_3.jpg" alt="Laser Tag Battle Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_thuringia_4.jpg" alt="Christmas Market Erfurt Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+        <!-- CASE STUDY 03.5: Barthelmes Tuning Fork E-Commerce -->
+        <article data-category="ecommerce" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-crimson">5.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.5 / E-Commerce Catalog</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">Barthelmes Tuning Fork Collection</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Produced 279+ product visuals across four product versions and categories (Medicine, Therapy, Personalized, Lifestyle), while refining product descriptions in Shopify and plentymarkets.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8">
+            <img src="images/proj_barthelmes_shop.jpg" alt="Barthelmes Marketplace Storefront" class="w-full max-h-96 object-cover object-top border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04: EDUCATION -->
+  <section id="education" data-panel="education" class="profile-panel hidden border-b border-line bg-white/50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-[3.5rem] lg:py-[4.9rem]">
+      <div class="relative inline-flex items-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-ink">education</h2>
+      </div>
+
+      <div class="grid md:grid-cols-1 gap-8">
+        <div class="border border-line bg-paper p-8 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-cobalt">2023 - Present</span>
+          <h3 class="text-xl font-extrabold text-ink">Schmalkalden University of Applied Sciences</h3>
+          <p class="text-sm font-semibold text-ink/80">Major in Multimedia Marketing</p>
+          <p class="text-sm text-muted">The Multimedia Marketing program teaches how to effectively plan and apply new media in marketing. It covers the creation of multimedia content for both online and offline marketing, including target group analysis, strategy development, website design, SEO, social media marketing, and photo/video creation. The program combines digital marketing knowledge with business and IT fundamentals, such as programming and business informatics, alongside modern design and media techniques.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+  <!-- SECTION 03: SKILLS -->
+  <section id="skills" class="border-b border-line bg-white/50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-[3.5rem] lg:py-[4.9rem]">
+      <div class="relative inline-flex items-center mb-14">
+        <span class="text-8xl sm:text-9xl font-extrabold tracking-tighter text-ink/10 select-none">03</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-ink -ml-10">skills</h2>
+      </div>
+      <div class="flex flex-wrap gap-3">
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Canva</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Shopify</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Plentymarkets</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Microsoft Office</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Social Media Marketing</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Organic Social Media</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Community Management</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Copywriting</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Content Creation</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Storytelling</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Brand Positioning</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Market Research</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Brand Development</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Cross-Cultural Communication</span>
+          <span class="text-sm font-semibold border border-ink/30 bg-paper px-5 py-2.5 rounded-full hover:border-ink hover:bg-ink hover:text-paper transition">Content Strategy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04: CONTACT -->
+  <footer id="contact" class="bg-ink text-paper">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-[3.5rem] lg:py-[4.9rem]">
+      <div class="grid lg:grid-cols-12 gap-12 items-end">
+        <div class="lg:col-span-8 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-crimson"></span>
+            <span class="text-xs font-bold uppercase tracking-widest text-stone-400">04 / Let's Connect</span>
+          </div>
+          <h2 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none">
+            Ready to make some <span class="text-crimson">noise</span> online?
+          </h2>
+          <p class="text-stone-400 max-w-lg text-base">Munich, Germany (open to relocation).</p>
+        </div>
+
+        <div class="lg:col-span-4 flex gap-4 lg:justify-end">
+          <a href="mailto:huynhnguyentramanh1302@gmail.com" aria-label="Email Sherry Huynh" title="Email" class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-paper text-ink hover:bg-cobalt hover:text-white transition">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m3 7 9 6 9-6"></path>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/sherryhuynh/" target="_blank" rel="noopener noreferrer" aria-label="Sherry Huynh on LinkedIn" title="LinkedIn" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-stone-600 text-paper hover:border-crimson hover:text-crimson transition">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67V9.4h2.67ZM7 8.22a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1ZM18.34 18h-2.67v-4.18c0-1-.02-2.29-1.4-2.29s-1.62 1.1-1.62 2.22V18H9.98V9.4h2.56v1.17h.04a2.8 2.8 0 0 1 2.51-1.38c2.69 0 3.19 1.77 3.19 4.07Z"></path>
+            </svg>
+          </a>
+          <a href="https://www.xing.com/profile/TramAnh_HuynhNguyen/web_profiles?nwt_nav=profile_icon" target="_blank" rel="noopener noreferrer" aria-label="Sherry Huynh on Xing" title="Xing" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-stone-600 text-paper hover:border-crimson hover:text-crimson transition">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-4">
+        <span>© 2026 Sherry Huynh (Huynh Nguyen Tram Anh)</span>
+        <span>Click any project visual to inspect full size</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Inspecting Designs & Photos -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-ink/90 hidden items-center justify-center p-4" onclick="closeLightbox()">
+    <button class="absolute top-6 right-6 text-white text-3xl font-light hover:text-crimson">&times;</button>
+    <img id="lightbox-img" src="" alt="Expanded Preview" class="max-h-[90vh] max-w-[90vw] object-contain border border-white/20 shadow-2xl" />
+  </div>
+
+  <script>
+    function showProfileTab(name) {
+      document.querySelectorAll('.profile-panel').forEach(p => {
+        p.classList.toggle('hidden', p.dataset.panel !== name);
+      });
+      document.querySelectorAll('.profile-tab').forEach(btn => {
+        const active = btn.dataset.tab === name;
+        btn.classList.toggle('bg-ink', active);
+        btn.classList.toggle('text-paper', active);
+        btn.classList.toggle('border', !active);
+        btn.classList.toggle('border-ink/30', !active);
+        btn.classList.toggle('text-ink', !active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+    }
+    function openFromHash() {
+      const h = location.hash.replace('#', '');
+      if (['experience', 'projects', 'education'].includes(h)) {
+        showProfileTab(h);
+        document.getElementById('profile').scrollIntoView();
+      }
+    }
+    window.addEventListener('hashchange', openFromHash);
+    showProfileTab('experience');
+    openFromHash();
+
+    function filterProjects(category, btnElement) {
+      const items = document.querySelectorAll('.project-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-ink', 'text-paper');
+        btn.classList.add('border', 'border-ink/30', 'text-ink');
+      });
+      btnElement.classList.remove('border', 'border-ink/30', 'text-ink');
+      btnElement.classList.add('bg-ink', 'text-paper');
+
+      items.forEach(item => {
+        const categories = item.getAttribute('data-category');
+        if (category === 'all' || categories.includes(category)) {
+          item.style.display = 'grid';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+    }
+
+    const germanTranslations = {
+      'About': 'Über mich',
+      'Organic Social Media': 'Organisches Social Media',
+      'Content Creation': 'Content-Erstellung',
+      'Brand Positioning': 'Markenpositionierung',
+      'Market Research': 'Marktforschung',
+      'Brand Development': 'Markenentwicklung',
+      'Cross-Cultural Communication': 'Interkulturelle Kommunikation',
+      'Content Strategy': 'Content-Strategie',
+      'My Profile': 'Mein Profil',
+      'Skills': 'Fähigkeiten',
+      'skills': 'fähigkeiten',
+      'my profile': 'mein profil',
+      'Experience': 'Erfahrung',
+      'Highlighted Projects': 'Ausgewählte Projekte',
+      'Education': 'Ausbildung',
+      'Contact': 'Kontakt',
+      '2026 Edition': 'Ausgabe 2026',
+      'Social Media & Multimedia Marketer': 'Social-Media- und Multimedia-Marketing',
+      'Hello, I’m': 'Hallo, ich bin',
+      'Social media strategist obsessed with impact - turning trends into growth and data into direction. Blending creativity with smart strategy for campaigns that spark conversation and build brand loyalty.': 'Social-Media-Strategin mit Fokus auf Wirkung: Ich verwandle Trends in Wachstum und Daten in klare Strategien. Mit Kreativität und durchdachter Planung entwickle ich Kampagnen, die Gespräche anregen und Markenbindung stärken.',
+      'IG Follower Growth': 'Instagram-Follower-Wachstum',
+      '2-Week Campaign Reach': 'Kampagnenreichweite in 2 Wochen',
+      'Visual Assets Created': 'Erstellte visuelle Inhalte',
+      'portfolio': 'Portfolio',
+      'Munich': 'München',
+      'Open to relocation': 'Umzugsbereit',
+      'about me': 'Über mich',
+      'Multilingual marketer working across English, German (B2/C1), and Vietnamese - bridging international audiences through community storytelling, structured workflows, and data-backed content.': 'Mehrsprachige Marketingfachkraft für Englisch, Deutsch (B2/C1) und Vietnamesisch. Ich verbinde internationales Publikum durch Community-Storytelling, strukturierte Abläufe und datengestützte Inhalte.',
+      'Instagram & Reels': 'Instagram & Reels',
+      'Canva & CapCut': 'Canva & CapCut',
+      'Competitive Analysis': 'Wettbewerbsanalyse',
+      'Whether scaling multi-country Instagram channels across Europe and the US, leading a campus marketing team of five in Germany, or building 279+ e-commerce visuals from scratch, I focus on clarity, consistency, and measurable reach.': 'Ob ich länderübergreifende Instagram-Kanäle in Europa und den USA ausbaue, ein fünfköpfiges Marketingteam an einer deutschen Hochschule leite oder über 279 E-Commerce-Visuals von Grund auf erstelle: Mein Fokus liegt auf Klarheit, Beständigkeit und messbarer Reichweite.',
+      'Helping brands connect, grow, and stand out in crowded feeds.': 'Ich helfe Marken, Beziehungen aufzubauen, zu wachsen und im vollen Feed aufzufallen.',
+      'experience': 'Berufserfahrung',
+      'International agency/NGO communication, e-commerce content operations, and student organization leadership.': 'Internationale Kommunikation für Agenturen und NGOs, E-Commerce-Content und Leitung einer Studierendenorganisation.',
+      'Oslo, Norway': 'Oslo, Norwegen',
+      'Marketing & Communication Intern': 'Praktikum Marketing & Kommunikation',
+      'Developed and executed social media strategies for Instagram channels across': 'Entwicklung und Umsetzung von Social-Media-Strategien für Instagram-Kanäle in',
+      '5 national bases': '5 nationalen Standorten',
+      '(US, Italy, Norway, Ukraine, Belgium).': '(USA, Italien, Norwegen, Ukraine, Belgien).',
+      'Collaborated with global team leaders to align strategy across diverse cultural contexts and redirect content direction.': 'Zusammenarbeit mit internationalen Teamleitungen, um Strategien an verschiedene kulturelle Kontexte anzupassen und die inhaltliche Ausrichtung weiterzuentwickeln.',
+      'Performed competitive analysis of internal and external data across all 5 Instagram channels.': 'Analyse interner und externer Wettbewerbsdaten für alle 5 Instagram-Kanäle.',
+      'E-Commerce & Social': 'E-Commerce & Social Media',
+      'Germany': 'Deutschland',
+      'Social Media Assistant': 'Social-Media-Assistenz',
+      'Designed and managed product content for online stores using': 'Gestaltung und Pflege von Produktinhalten für Onlineshops mit',
+      'Shopify, plentymarkets, and Canva': 'Shopify, plentymarkets und Canva',
+      'Created': 'Erstellung von',
+      '279+ product visuals': 'über 279 Produktvisuals',
+      'and updated product listings with accurate, compelling descriptions.': 'sowie Pflege von Produktangeboten mit präzisen, überzeugenden Beschreibungen.',
+      'Organized product collections for easier navigation, improved UX, and consistent storefront branding.': 'Strukturierung von Produktkollektionen für einfachere Navigation, bessere Nutzerfreundlichkeit und einheitliches Shop-Branding.',
+      '1.5+ Years Leadership': 'Über 1,5 Jahre Führung',
+      'Schmalkalden, Germany': 'Schmalkalden, Deutschland',
+      'Vice President of Media & Marketing Department': 'Vizepräsidentin für Medien und Marketing',
+      'Led media strategy and a team of 5; boosted Instagram reach by': 'Leitung der Medienstrategie und eines 5-köpfigen Teams; Steigerung der Instagram-Reichweite um',
+      '43%': '43 %',
+      'and followers by': 'und der Followerzahl um',
+      '69%': '69 %',
+      '.': '.',
+      'Built structured marketing workflows and produced': 'Aufbau strukturierter Marketingabläufe und Erstellung von',
+      '130+ promotional designs': 'über 130 Werbedesigns',
+      'and Reels across Instagram, Facebook, and WhatsApp.': 'und Reels für Instagram, Facebook und WhatsApp.',
+      'Drove flagship student events including': 'Mitgestaltung zentraler Studierendenveranstaltungen, darunter',
+      'One World Fiesta 2024': 'One World Fiesta 2024',
+      'and the DAAD-funded': 'und das vom DAAD geförderte',
+      'Buddy Program': 'Buddy-Programm',
+      'Events & Research': 'Veranstaltungen & Recherche',
+      'Vietnam': 'Vietnam',
+      'Communication & Event Supporter': 'Kommunikations- und Eventmitarbeiterin',
+      'Created content and photographed': 'Erstellung von Inhalten und Fotografie bei',
+      '20+ educational events': 'über 20 Bildungsveranstaltungen',
+      'and developed activities for 20+ workshops.': 'sowie Entwicklung von Aktivitäten für über 20 Workshops.',
+      'Assisted a Facebook campaign that gained': 'Unterstützung einer Facebook-Kampagne mit',
+      '1,000+ likes in 3 weeks': 'über 1.000 Likes in 3 Wochen',
+      'Conducted surveys and interviews with': 'Durchführung von Umfragen und Interviews mit',
+      '2,000+ participants': 'über 2.000 Teilnehmenden',
+      'highlighted projects': 'ausgewählte Projekte',
+      'All Projects': 'Alle Projekte',
+      'Campaigns & Events': 'Kampagnen & Veranstaltungen',
+      'Content Series': 'Content-Serien',
+      'E-Commerce': 'E-Commerce',
+      '03.1 / Flagship Cultural Event': '03.1 / Zentrales Kulturevent',
+      'Coordinated Schmalkalden’s largest cultural festival with a 30-member team, uniting students from 4 continents and 10+ countries through fashion, dance, cuisine, and music.': 'Koordination von Schmalkaldens größtem Kulturfestival mit einem 30-köpfigen Team. Das Event brachte Studierende aus 4 Kontinenten und über 10 Ländern durch Mode, Tanz, Küche und Musik zusammen.',
+      'Event Attendance': 'Besucherzahl',
+      '300+ Guests': 'Über 300 Gäste',
+      'Instagram Reach (2 Weeks)': 'Instagram-Reichweite (2 Wochen)',
+      '03.2 / DAAD STIBET Initiative': '03.2 / DAAD-STIBET-Initiative',
+      'Hochschule Schmalkalden Buddy Program': 'Buddy-Programm der Hochschule Schmalkalden',
+      'Collaborated with the University International Office and DEGIS national team to lead Instagram recruitment and community storytelling for international student integration.': 'Zusammenarbeit mit dem International Office der Hochschule und dem DEGIS-Bundesteam. Leitung der Instagram-Akquise und des Community-Storytellings zur Integration internationaler Studierender.',
+      'Community Supported': 'Unterstützte Community',
+      '20 Mentors & ~100 Mentees': '20 Mentorinnen und Mentoren & ca. 100 Mentees',
+      'Funding Partner': 'Förderpartner',
+      '03.3 / Instagram Content Series': '03.3 / Instagram-Content-Serie',
+      '“Are You New Here?” Onboarding Guide': '„Neu hier?“ - Willkommensleitfaden',
+      'Created an informational Instagram carousel series for Winter Semester 24/25 arrivals, turning real student questions on local shopping, events, gyms, and English-speaking doctors into digestible visual guides.': 'Erstellung einer informativen Instagram-Karussellserie für neue Studierende im Wintersemester 24/25. Häufige Fragen zu Einkaufsmöglichkeiten, Veranstaltungen, Fitnessstudios und englischsprachigen Ärzten wurden in übersichtliche visuelle Leitfäden verwandelt.',
+      '03.4 / Event Promotion Design': '03.4 / Event-Promotion-Design',
+      'Discovering Thuringia Series': 'Thüringen entdecken',
+      'Designed multi-channel promotional posters for student excursions to Eisenach (Wartburg Castle), Erfurt Zoo, Laser Tag, and the Erfurt Christmas Market, consistently driving 20-30 attendees per trip.': 'Gestaltung kanalübergreifender Werbeplakate für Studierendenausflüge nach Eisenach (Wartburg), in den Erfurter Zoo, zum Laser Tag und zum Erfurter Weihnachtsmarkt. Jede Fahrt erreichte regelmäßig 20 bis 30 Teilnehmende.',
+      '03.5 / E-Commerce Catalog': '03.5 / E-Commerce-Katalog',
+      'Barthelmes Tuning Fork Collection': 'Barthelmes-Stimmgabel-Kollektion',
+      'Produced 279+ product visuals across four product versions and categories (Medicine, Therapy, Personalized, Lifestyle), while refining product descriptions in Shopify and plentymarkets.': 'Erstellung von über 279 Produktvisuals für vier Produktvarianten und Kategorien (Medizin, Therapie, personalisiert, Lifestyle) sowie Optimierung von Produktbeschreibungen in Shopify und plentymarkets.',
+      'education': 'Ausbildung',
+      '2023 - Present': '2023 - heute',
+      'Schmalkalden University of Applied Sciences': 'Hochschule Schmalkalden',
+      'Major in Multimedia Marketing': 'Studiengang Multimedia-Marketing',
+      'The Multimedia Marketing program teaches how to effectively plan and apply new media in marketing. It covers the creation of multimedia content for both online and offline marketing, including target group analysis, strategy development, website design, SEO, social media marketing, and photo/video creation. The program combines digital marketing knowledge with business and IT fundamentals, such as programming and business informatics, alongside modern design and media techniques.': 'Der Studiengang Multimedia Marketing vermittelt, wie neue Medien im Marketing effektiv geplant und eingesetzt werden. Es umfasst die Erstellung multimedialer Inhalte für Online- und Offline-Marketing, einschließlich Zielgruppenanalyse, Strategieentwicklung, Webseitengestaltung, SEO, Social Media Marketing sowie Foto- und Videoproduktion. Das Programm verbindet digitales Marketingwissen mit betriebswirtschaftlichen und IT-Grundlagen – wie Programmierung und Wirtschaftsinformatik – und kombiniert diese mit modernen Design- und Medientechniken.',
+      '04 / Let’s Connect': '04 / Kontakt',
+      '04 / Let\'s Connect': '04 / Kontakt',
+      'Ready to make some': 'Lust, online',
+      'noise': 'Aufmerksamkeit',
+      'online?': 'zu erzeugen?',
+      'Munich, Germany (open to relocation).': 'München, Deutschland (Umzug möglich).',
+      'Click any project visual to inspect full size': 'Klicken Sie auf ein Projektbild, um es zu vergrößern'
+    };
+
+    const languageToggle = document.getElementById('language-toggle');
+    const themeToggle = document.getElementById('theme-toggle');
+    const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const originalTextNodes = [];
+    while (textWalker.nextNode()) {
+      const node = textWalker.currentNode;
+      if (node.textContent.trim()) {
+        originalTextNodes.push({ node, original: node.textContent });
+      }
+    }
+
+    function setLanguage(language) {
+      const german = language === 'de';
+      originalTextNodes.forEach(({ node, original }) => {
+        const text = original.trim();
+        node.textContent = german && germanTranslations[text]
+          ? original.replace(text, germanTranslations[text])
+          : original;
+      });
+      document.documentElement.lang = language;
+      document.title = german ? 'Sherry Huynh - Portfolio' : 'Sherry Huynh - Portfolio';
+      languageToggle.textContent = german ? 'EN' : 'DE';
+      languageToggle.setAttribute('aria-label', german ? 'Sprache auf Englisch umstellen' : 'Switch language to German');
+      const isDark = document.body.classList.contains('dark-mode');
+      themeToggle.title = isDark
+        ? (german ? 'Dunkler Modus' : 'Dark mode')
+        : (german ? 'Heller Modus' : 'Light mode');
+      themeToggle.setAttribute('aria-label', isDark
+        ? (german ? 'Zum hellen Modus wechseln' : 'Switch to light mode')
+        : (german ? 'Zum dunklen Modus wechseln' : 'Switch to dark mode'));
+      localStorage.setItem('portfolio-language', language);
+    }
+
+    function setTheme(isDark) {
+      document.body.classList.toggle('dark-mode', isDark);
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      setLanguage(localStorage.getItem('portfolio-language') || 'en');
+      localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+    }
+
+    languageToggle.addEventListener('click', () => {
+      setLanguage(document.documentElement.lang === 'de' ? 'en' : 'de');
+    });
+    themeToggle.addEventListener('click', () => {
+      setTheme(!document.body.classList.contains('dark-mode'));
+    });
+    setTheme(localStorage.getItem('portfolio-theme') === 'dark');
+  </script>
+</body>
+</html>
