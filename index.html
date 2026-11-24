@@ -80,6 +80,13 @@
     body.dark-mode [class~="border-stone-800"] {
       border-color: #3B3D39;
     }
+    .theme-moon,
+    body.dark-mode .theme-sun {
+      display: none;
+    }
+    body.dark-mode .theme-moon {
+      display: block;
+    }
     .vertical-label {
       writing-mode: vertical-rl;
       transform: rotate(180deg);
@@ -87,6 +94,15 @@
     .editorial-grid {
       background-image: linear-gradient(to right, rgba(20, 20, 19, 0.04) 1px, transparent 1px);
       background-size: 25% 100%;
+    }
+    .experience-photo-frame {
+      aspect-ratio: 4 / 3;
+    }
+    .experience-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   </style>
 </head>
@@ -100,14 +116,22 @@
         <span>Sherry Huynh - Portfolio</span>
       </a>
       <nav class="hidden md:flex items-center gap-8 text-muted">
-        <a href="#about" class="hover:text-ink transition">01 / About</a>
-        <a href="#experience" class="hover:text-ink transition">02 / Experience</a>
-        <a href="#projects" class="hover:text-ink transition">03 / Highlighted Projects</a>
-        <a href="#education" class="hover:text-ink transition">04 / Education</a>
-        <a href="#contact" class="hover:text-crimson transition">05 / Contact</a>
+        <a href="#about" class="hover:text-ink transition">About</a>
+        <a href="#experience" class="hover:text-ink transition">Experience</a>
+        <a href="#projects" class="hover:text-ink transition">Highlighted Projects</a>
+        <a href="#education" class="hover:text-ink transition">Education</a>
+        <a href="#contact" class="hover:text-crimson transition">Contact</a>
       </nav>
       <div class="flex items-center gap-2">
-        <button id="theme-toggle" type="button" class="border border-ink px-3 py-1.5 rounded-full hover:bg-ink hover:text-paper transition" aria-label="Switch to dark mode" aria-pressed="false">Dark</button>
+        <button id="theme-toggle" type="button" class="border border-ink p-1.5 rounded-full hover:bg-ink hover:text-paper transition" aria-label="Switch to dark mode" aria-pressed="false" title="Light mode">
+          <svg class="theme-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          </svg>
+          <svg class="theme-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.5 8.5 0 1 0 20.2 15.2Z"></path>
+          </svg>
+        </button>
         <button id="language-toggle" type="button" class="border border-ink px-3 py-1.5 rounded-full hover:bg-ink hover:text-paper transition" aria-label="Switch language to German">DE</button>
         <a href="#contact" class="border border-ink px-4 py-1.5 rounded-full hover:bg-ink hover:text-paper transition">
           Get in touch
@@ -183,7 +207,7 @@
 
             <!-- Floating caption card -->
             <div class="bg-paper border border-ink px-4 py-3 mt-4 flex items-center justify-between text-xs">
-              <span class="font-bold uppercase tracking-wider">Schmalkalden / Oslo</span>
+              <span class="font-bold uppercase tracking-wider">Munich</span>
               <span class="text-muted">Open to relocation</span>
             </div>
           </div>
@@ -313,13 +337,18 @@
             <h3 class="text-xl font-extrabold text-ink mt-2">DEGIS Schmalkalden</h3>
             <p class="text-sm text-muted">Schmalkalden, Germany</p>
           </div>
-          <div class="lg:col-span-9 space-y-4">
+          <div class="lg:col-span-6 space-y-4">
             <h4 class="text-2xl font-bold text-ink">Vice President of Media & Marketing Department</h4>
             <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
               <li>Led media strategy and a team of 5; boosted Instagram reach by <strong>43%</strong> and followers by <strong>69%</strong>.</li>
               <li>Built structured marketing workflows and produced <strong>130+ promotional designs</strong> and Reels across Instagram, Facebook, and WhatsApp.</li>
               <li>Drove flagship student events including <em>One World Fiesta 2024</em> and the DAAD-funded <em>Buddy Program</em>.</li>
             </ul>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="experience-photo-frame overflow-hidden border border-ink/10 bg-stone-200">
+              <img src="images/exp_jesus_revolution.jpg" alt="Sherry with colleagues at a student community event" />
+            </div>
           </div>
         </div>
 
@@ -528,17 +557,20 @@
           <h2 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none">
             Ready to make some <span class="text-crimson">noise</span> online?
           </h2>
-          <p class="text-stone-400 max-w-lg text-base">
-            Martin-Luther-Ring 03, 98547 Schmalkalden, Germany (relocation possible).
-          </p>
+          <p class="text-stone-400 max-w-lg text-base">Munich, Germany (open to relocation).</p>
         </div>
 
-        <div class="lg:col-span-4 space-y-4">
-          <a href="mailto:huynhnguyentramanh1302@gmail.com" class="block w-full text-center bg-paper text-ink font-bold text-sm px-6 py-4 rounded-full hover:bg-cobalt hover:text-white transition">
-            huynhnguyentramanh1302@gmail.com
+        <div class="lg:col-span-4 flex gap-4 lg:justify-end">
+          <a href="mailto:huynhnguyentramanh1302@gmail.com" aria-label="Email Sherry Huynh" title="Email" class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-paper text-ink hover:bg-cobalt hover:text-white transition">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m3 7 9 6 9-6"></path>
+            </svg>
           </a>
-          <a href="https://www.linkedin.com/in/sherryhuynh/" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-stone-600 text-paper font-semibold text-sm px-6 py-4 rounded-full hover:border-crimson hover:text-crimson transition">
-            LinkedIn
+          <a href="https://www.linkedin.com/in/sherryhuynh/" target="_blank" rel="noopener noreferrer" aria-label="Sherry Huynh on LinkedIn" title="LinkedIn" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-stone-600 text-paper hover:border-crimson hover:text-crimson transition">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18H5.67V9.4h2.67ZM7 8.22a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1ZM18.34 18h-2.67v-4.18c0-1-.02-2.29-1.4-2.29s-1.62 1.1-1.62 2.22V18H9.98V9.4h2.56v1.17h.04a2.8 2.8 0 0 1 2.51-1.38c2.69 0 3.19 1.77 3.19 4.07Z"></path>
+            </svg>
           </a>
         </div>
       </div>
@@ -593,11 +625,11 @@
     }
 
     const germanTranslations = {
-      '01 / About': '01 / Über mich',
-      '02 / Experience': '02 / Erfahrung',
-      '03 / Highlighted Projects': '03 / Ausgewählte Projekte',
-      '04 / Education': '04 / Ausbildung',
-      '05 / Contact': '05 / Kontakt',
+      'About': 'Über mich',
+      'Experience': 'Erfahrung',
+      'Highlighted Projects': 'Ausgewählte Projekte',
+      'Education': 'Ausbildung',
+      'Contact': 'Kontakt',
       'Get in touch': 'Kontakt aufnehmen',
       '2026 Edition': 'Ausgabe 2026',
       'Social Media & Multimedia Marketer': 'Social-Media- und Multimedia-Marketing',
@@ -607,7 +639,7 @@
       '2-Week Campaign Reach': 'Kampagnenreichweite in 2 Wochen',
       'Visual Assets Created': 'Erstellte visuelle Inhalte',
       'portfolio': 'Portfolio',
-      'Schmalkalden / Oslo': 'Schmalkalden / Oslo',
+      'Munich': 'München',
       'Open to relocation': 'Umzugsbereit',
       'about me': 'Über mich',
       'Multilingual marketer working across English, German (B2/C1), and Vietnamese - bridging international audiences through community storytelling, structured workflows, and data-backed content.': 'Mehrsprachige Marketingfachkraft für Englisch, Deutsch (B2/C1) und Vietnamesisch. Ich verbinde internationales Publikum durch Community-Storytelling, strukturierte Abläufe und datengestützte Inhalte.',
@@ -694,7 +726,7 @@
       'Ready to make some': 'Lust, online',
       'noise': 'Aufmerksamkeit',
       'online?': 'zu erzeugen?',
-      'Martin-Luther-Ring 03, 98547 Schmalkalden, Germany (relocation possible).': 'Martin-Luther-Ring 03, 98547 Schmalkalden, Deutschland (Umzug möglich).',
+      'Munich, Germany (open to relocation).': 'München, Deutschland (Umzug möglich).',
       'Click any project visual to inspect full size': 'Klicken Sie auf ein Projektbild, um es zu vergrößern'
     };
 
@@ -721,11 +753,12 @@
       document.title = german ? 'Sherry Huynh - Portfolio' : 'Sherry Huynh - Portfolio';
       languageToggle.textContent = german ? 'EN' : 'DE';
       languageToggle.setAttribute('aria-label', german ? 'Sprache auf Englisch umstellen' : 'Switch language to German');
-      themeToggle.textContent = document.body.classList.contains('dark-mode')
-        ? (german ? 'Hell' : 'Light')
-        : (german ? 'Dunkel' : 'Dark');
-      themeToggle.setAttribute('aria-label', document.body.classList.contains('dark-mode')
-        ? (german ? 'Zum hellen Modus wechseln' : 'Switch to bright mode')
+      const isDark = document.body.classList.contains('dark-mode');
+      themeToggle.title = isDark
+        ? (german ? 'Dunkler Modus' : 'Dark mode')
+        : (german ? 'Heller Modus' : 'Light mode');
+      themeToggle.setAttribute('aria-label', isDark
+        ? (german ? 'Zum hellen Modus wechseln' : 'Switch to light mode')
         : (german ? 'Zum dunklen Modus wechseln' : 'Switch to dark mode'));
       localStorage.setItem('portfolio-language', language);
     }
