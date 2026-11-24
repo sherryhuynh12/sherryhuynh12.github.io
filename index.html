@@ -17,21 +17,68 @@
             serif: ['"Instrument Serif"', 'serif'],
           },
           colors: {
-            paper: '#F7F6F2',
-            ink: '#141413',
-            cobalt: '#1D4ED8',
-            crimson: '#D93829',
-            muted: '#6E6D68',
-            line: '#DCDAD3'
+            paper: 'rgb(var(--paper-rgb) / <alpha-value>)',
+            ink: 'rgb(var(--ink-rgb) / <alpha-value>)',
+            cobalt: 'rgb(var(--cobalt-rgb) / <alpha-value>)',
+            crimson: 'rgb(var(--crimson-rgb) / <alpha-value>)',
+            muted: 'rgb(var(--muted-rgb) / <alpha-value>)',
+            line: 'rgb(var(--line-rgb) / <alpha-value>)'
           }
         }
       }
     }
   </script>
   <style>
+    :root {
+      --paper: #F7F6F2;
+      --paper-rgb: 247 246 242;
+      --ink: #141413;
+      --ink-rgb: 20 20 19;
+      --cobalt: #1D4ED8;
+      --cobalt-rgb: 29 78 216;
+      --crimson: #D93829;
+      --crimson-rgb: 217 56 41;
+      --muted: #6E6D68;
+      --muted-rgb: 110 109 104;
+      --line: #DCDAD3;
+      --line-rgb: 220 218 211;
+    }
     body {
-      background-color: #F7F6F2;
-      color: #141413;
+      background-color: var(--paper);
+      color: var(--ink);
+    }
+    body.dark-mode {
+      --paper: #171817;
+      --paper-rgb: 23 24 23;
+      --ink: #F4F2EB;
+      --ink-rgb: 244 242 235;
+      --cobalt: #82A6FF;
+      --cobalt-rgb: 130 166 255;
+      --crimson: #FF8376;
+      --crimson-rgb: 255 131 118;
+      --muted: #AAA99F;
+      --muted-rgb: 170 169 159;
+      --line: #3B3D39;
+      --line-rgb: 59 61 57;
+    }
+    body.dark-mode [class~="bg-white"],
+    body.dark-mode [class~="bg-stone-200"] {
+      background-color: #222421;
+    }
+    body.dark-mode [class~="bg-white/50"] {
+      background-color: rgba(255, 255, 255, 0.035);
+    }
+    body.dark-mode [class~="text-stone-400"] {
+      color: #AAA99F;
+    }
+    body.dark-mode [class~="text-stone-500"] {
+      color: #92938B;
+    }
+    body.dark-mode [class~="border-stone-600"] {
+      border-color: #666861;
+    }
+    body.dark-mode [class~="border-stone-800"] {
+      border-color: #3B3D39;
     }
     .vertical-label {
       writing-mode: vertical-rl;
@@ -55,13 +102,17 @@
       <nav class="hidden md:flex items-center gap-8 text-muted">
         <a href="#about" class="hover:text-ink transition">01 / About</a>
         <a href="#experience" class="hover:text-ink transition">02 / Experience</a>
-        <a href="#projects" class="hover:text-ink transition">03 / Selected Work</a>
+        <a href="#projects" class="hover:text-ink transition">03 / Highlighted Projects</a>
         <a href="#education" class="hover:text-ink transition">04 / Education</a>
         <a href="#contact" class="hover:text-crimson transition">05 / Contact</a>
       </nav>
-      <a href="#contact" class="border border-ink px-4 py-1.5 rounded-full hover:bg-ink hover:text-paper transition">
-        Get in touch
-      </a>
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" type="button" class="border border-ink px-3 py-1.5 rounded-full hover:bg-ink hover:text-paper transition" aria-label="Switch to dark mode" aria-pressed="false">Dark</button>
+        <button id="language-toggle" type="button" class="border border-ink px-3 py-1.5 rounded-full hover:bg-ink hover:text-paper transition" aria-label="Switch language to German">DE</button>
+        <a href="#contact" class="border border-ink px-4 py-1.5 rounded-full hover:bg-ink hover:text-paper transition">
+          Get in touch
+        </a>
+      </div>
     </div>
   </header>
 
@@ -119,7 +170,7 @@
             <div class="w-14 h-14 rounded-full bg-crimson absolute -top-5 -left-5 z-10 shadow-sm"></div>
             
             <!-- Main Portrait -->
-            <div class="aspect-[3/4] overflow-hidden bg-stone-200 border border-ink/10 shadow-sm">
+            <div class="aspect-[15/17] overflow-hidden bg-stone-200 border border-ink/10 shadow-sm">
               <img src="images/hero_portrait.jpg" alt="Sherry Huynh Portrait" class="w-full h-full object-cover object-center" />
             </div>
 
@@ -218,13 +269,18 @@
             <h3 class="text-xl font-extrabold text-ink mt-2">Jesus Revolution</h3>
             <p class="text-sm text-muted">Oslo, Norway</p>
           </div>
-          <div class="lg:col-span-9 space-y-4">
+          <div class="lg:col-span-6 space-y-4">
             <h4 class="text-2xl font-bold text-cobalt">Marketing & Communication Intern</h4>
             <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
               <li>Developed and executed social media strategies for Instagram channels across <strong>5 national bases</strong> (US, Italy, Norway, Ukraine, Belgium).</li>
               <li>Collaborated with global team leaders to align strategy across diverse cultural contexts and redirect content direction.</li>
               <li>Performed competitive analysis of internal and external data across all 5 Instagram channels.</li>
             </ul>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="aspect-square overflow-hidden border border-ink/10 bg-stone-200">
+              <img src="images/exp_jesus_revolution.jpg" alt="Sherry with colleagues at Jesus Revolution" class="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
 
@@ -300,7 +356,7 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div class="relative inline-flex items-center">
           <span class="text-8xl sm:text-9xl font-extrabold tracking-tighter text-ink/10 select-none">03</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-cobalt -ml-10">selected work</h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-cobalt -ml-10">highlighted projects</h2>
         </div>
 
         <!-- Category Filter -->
@@ -448,7 +504,7 @@
         <h2 class="text-3xl sm:text-4xl font-extrabold text-ink -ml-10">education</h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-1 gap-8">
         <div class="border border-line bg-paper p-8 space-y-3">
           <span class="text-xs font-extrabold uppercase tracking-widest text-cobalt">2023 - Present</span>
           <h3 class="text-xl font-extrabold text-ink">Schmalkalden University of Applied Sciences</h3>
@@ -456,19 +512,6 @@
           <p class="text-sm text-muted">Vice President of Media & Marketing Department at DEGIS Schmalkalden.</p>
         </div>
 
-        <div class="border border-line bg-paper p-8 space-y-3">
-          <span class="text-xs font-extrabold uppercase tracking-widest text-crimson">2022 - 2023</span>
-          <h3 class="text-xl font-extrabold text-ink">DKFA Munich</h3>
-          <p class="text-sm font-semibold text-ink/80">German Language Courses (A1 - C1)</p>
-          <p class="text-sm text-muted">Deutschkurse bei der Universität München e.V., achieved B2 certification within 8 months.</p>
-        </div>
-
-        <div class="border border-line bg-paper p-8 space-y-3">
-          <span class="text-xs font-extrabold uppercase tracking-widest text-muted">2019 - 2022</span>
-          <h3 class="text-xl font-extrabold text-ink">Phu My High School</h3>
-          <p class="text-sm font-semibold text-ink/80">Head of Media Department</p>
-          <p class="text-sm text-muted">Led media production and visual campaigns for PMEC - Phu My English Club.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -494,8 +537,8 @@
           <a href="mailto:huynhnguyentramanh1302@gmail.com" class="block w-full text-center bg-paper text-ink font-bold text-sm px-6 py-4 rounded-full hover:bg-cobalt hover:text-white transition">
             huynhnguyentramanh1302@gmail.com
           </a>
-          <a href="https://wa.me/491785262364" target="_blank" rel="noopener" class="block w-full text-center border border-stone-600 text-paper font-semibold text-sm px-6 py-4 rounded-full hover:border-crimson hover:text-crimson transition">
-            WhatsApp: +49 178 5262364
+          <a href="https://www.linkedin.com/in/sherryhuynh/" target="_blank" rel="noopener noreferrer" class="block w-full text-center border border-stone-600 text-paper font-semibold text-sm px-6 py-4 rounded-full hover:border-crimson hover:text-crimson transition">
+            LinkedIn
           </a>
         </div>
       </div>
@@ -548,6 +591,159 @@
       lb.classList.add('hidden');
       lb.classList.remove('flex');
     }
+
+    const germanTranslations = {
+      '01 / About': '01 / Über mich',
+      '02 / Experience': '02 / Erfahrung',
+      '03 / Highlighted Projects': '03 / Ausgewählte Projekte',
+      '04 / Education': '04 / Ausbildung',
+      '05 / Contact': '05 / Kontakt',
+      'Get in touch': 'Kontakt aufnehmen',
+      '2026 Edition': 'Ausgabe 2026',
+      'Social Media & Multimedia Marketer': 'Social-Media- und Multimedia-Marketing',
+      'Hello, I’m': 'Hallo, ich bin',
+      'Social media strategist obsessed with impact - turning trends into growth and data into direction. Blending creativity with smart strategy for campaigns that spark conversation and build brand loyalty.': 'Social-Media-Strategin mit Fokus auf Wirkung: Ich verwandle Trends in Wachstum und Daten in klare Strategien. Mit Kreativität und durchdachter Planung entwickle ich Kampagnen, die Gespräche anregen und Markenbindung stärken.',
+      'IG Follower Growth': 'Instagram-Follower-Wachstum',
+      '2-Week Campaign Reach': 'Kampagnenreichweite in 2 Wochen',
+      'Visual Assets Created': 'Erstellte visuelle Inhalte',
+      'portfolio': 'Portfolio',
+      'Schmalkalden / Oslo': 'Schmalkalden / Oslo',
+      'Open to relocation': 'Umzugsbereit',
+      'about me': 'Über mich',
+      'Multilingual marketer working across English, German (B2/C1), and Vietnamese - bridging international audiences through community storytelling, structured workflows, and data-backed content.': 'Mehrsprachige Marketingfachkraft für Englisch, Deutsch (B2/C1) und Vietnamesisch. Ich verbinde internationales Publikum durch Community-Storytelling, strukturierte Abläufe und datengestützte Inhalte.',
+      'Instagram & Reels': 'Instagram & Reels',
+      'Canva & CapCut': 'Canva & CapCut',
+      'Competitive Analysis': 'Wettbewerbsanalyse',
+      'Whether scaling multi-country Instagram channels across Europe and the US, leading a campus marketing team of five in Germany, or building 279+ e-commerce visuals from scratch, I focus on clarity, consistency, and measurable reach.': 'Ob ich länderübergreifende Instagram-Kanäle in Europa und den USA ausbaue, ein fünfköpfiges Marketingteam an einer deutschen Hochschule leite oder über 279 E-Commerce-Visuals von Grund auf erstelle: Mein Fokus liegt auf Klarheit, Beständigkeit und messbarer Reichweite.',
+      'Helping brands connect, grow, and stand out in crowded feeds.': 'Ich helfe Marken, Beziehungen aufzubauen, zu wachsen und im vollen Feed aufzufallen.',
+      'experience': 'Berufserfahrung',
+      'International agency/NGO communication, e-commerce content operations, and student organization leadership.': 'Internationale Kommunikation für Agenturen und NGOs, E-Commerce-Content und Leitung einer Studierendenorganisation.',
+      'Oslo, Norway': 'Oslo, Norwegen',
+      'Marketing & Communication Intern': 'Praktikum Marketing & Kommunikation',
+      'Developed and executed social media strategies for Instagram channels across': 'Entwicklung und Umsetzung von Social-Media-Strategien für Instagram-Kanäle in',
+      '5 national bases': '5 nationalen Standorten',
+      '(US, Italy, Norway, Ukraine, Belgium).': '(USA, Italien, Norwegen, Ukraine, Belgien).',
+      'Collaborated with global team leaders to align strategy across diverse cultural contexts and redirect content direction.': 'Zusammenarbeit mit internationalen Teamleitungen, um Strategien an verschiedene kulturelle Kontexte anzupassen und die inhaltliche Ausrichtung weiterzuentwickeln.',
+      'Performed competitive analysis of internal and external data across all 5 Instagram channels.': 'Analyse interner und externer Wettbewerbsdaten für alle 5 Instagram-Kanäle.',
+      'E-Commerce & Social': 'E-Commerce & Social Media',
+      'Germany': 'Deutschland',
+      'Social Media Assistant': 'Social-Media-Assistenz',
+      'Designed and managed product content for online stores using': 'Gestaltung und Pflege von Produktinhalten für Onlineshops mit',
+      'Shopify, plentymarkets, and Canva': 'Shopify, plentymarkets und Canva',
+      'Created': 'Erstellung von',
+      '279+ product visuals': 'über 279 Produktvisuals',
+      'and updated product listings with accurate, compelling descriptions.': 'sowie Pflege von Produktangeboten mit präzisen, überzeugenden Beschreibungen.',
+      'Organized product collections for easier navigation, improved UX, and consistent storefront branding.': 'Strukturierung von Produktkollektionen für einfachere Navigation, bessere Nutzerfreundlichkeit und einheitliches Shop-Branding.',
+      '1.5+ Years Leadership': 'Über 1,5 Jahre Führung',
+      'Schmalkalden, Germany': 'Schmalkalden, Deutschland',
+      'Vice President of Media & Marketing Department': 'Vizepräsidentin für Medien und Marketing',
+      'Led media strategy and a team of 5; boosted Instagram reach by': 'Leitung der Medienstrategie und eines 5-köpfigen Teams; Steigerung der Instagram-Reichweite um',
+      '43%': '43 %',
+      'and followers by': 'und der Followerzahl um',
+      '69%': '69 %',
+      '.': '.',
+      'Built structured marketing workflows and produced': 'Aufbau strukturierter Marketingabläufe und Erstellung von',
+      '130+ promotional designs': 'über 130 Werbedesigns',
+      'and Reels across Instagram, Facebook, and WhatsApp.': 'und Reels für Instagram, Facebook und WhatsApp.',
+      'Drove flagship student events including': 'Mitgestaltung zentraler Studierendenveranstaltungen, darunter',
+      'One World Fiesta 2024': 'One World Fiesta 2024',
+      'and the DAAD-funded': 'und das vom DAAD geförderte',
+      'Buddy Program': 'Buddy-Programm',
+      'Events & Research': 'Veranstaltungen & Recherche',
+      'Vietnam': 'Vietnam',
+      'Communication & Event Supporter': 'Kommunikations- und Eventmitarbeiterin',
+      'Created content and photographed': 'Erstellung von Inhalten und Fotografie bei',
+      '20+ educational events': 'über 20 Bildungsveranstaltungen',
+      'and developed activities for 20+ workshops.': 'sowie Entwicklung von Aktivitäten für über 20 Workshops.',
+      'Assisted a Facebook campaign that gained': 'Unterstützung einer Facebook-Kampagne mit',
+      '1,000+ likes in 3 weeks': 'über 1.000 Likes in 3 Wochen',
+      'Conducted surveys and interviews with': 'Durchführung von Umfragen und Interviews mit',
+      '2,000+ participants': 'über 2.000 Teilnehmenden',
+      'highlighted projects': 'ausgewählte Projekte',
+      'All Projects': 'Alle Projekte',
+      'Campaigns & Events': 'Kampagnen & Veranstaltungen',
+      'Content Series': 'Content-Serien',
+      'E-Commerce': 'E-Commerce',
+      '03.1 / Flagship Cultural Event': '03.1 / Zentrales Kulturevent',
+      'Coordinated Schmalkalden’s largest cultural festival with a 30-member team, uniting students from 4 continents and 10+ countries through fashion, dance, cuisine, and music.': 'Koordination von Schmalkaldens größtem Kulturfestival mit einem 30-köpfigen Team. Das Event brachte Studierende aus 4 Kontinenten und über 10 Ländern durch Mode, Tanz, Küche und Musik zusammen.',
+      'Event Attendance': 'Besucherzahl',
+      '300+ Guests': 'Über 300 Gäste',
+      'Instagram Reach (2 Weeks)': 'Instagram-Reichweite (2 Wochen)',
+      '03.2 / DAAD STIBET Initiative': '03.2 / DAAD-STIBET-Initiative',
+      'Hochschule Schmalkalden Buddy Program': 'Buddy-Programm der Hochschule Schmalkalden',
+      'Collaborated with the University International Office and DEGIS national team to lead Instagram recruitment and community storytelling for international student integration.': 'Zusammenarbeit mit dem International Office der Hochschule und dem DEGIS-Bundesteam. Leitung der Instagram-Akquise und des Community-Storytellings zur Integration internationaler Studierender.',
+      'Community Supported': 'Unterstützte Community',
+      '20 Mentors & ~100 Mentees': '20 Mentorinnen und Mentoren & ca. 100 Mentees',
+      'Funding Partner': 'Förderpartner',
+      '03.3 / Instagram Content Series': '03.3 / Instagram-Content-Serie',
+      '“Are You New Here?” Onboarding Guide': '„Neu hier?“ - Willkommensleitfaden',
+      'Created an informational Instagram carousel series for Winter Semester 24/25 arrivals, turning real student questions on local shopping, events, gyms, and English-speaking doctors into digestible visual guides.': 'Erstellung einer informativen Instagram-Karussellserie für neue Studierende im Wintersemester 24/25. Häufige Fragen zu Einkaufsmöglichkeiten, Veranstaltungen, Fitnessstudios und englischsprachigen Ärzten wurden in übersichtliche visuelle Leitfäden verwandelt.',
+      '03.4 / Event Promotion Design': '03.4 / Event-Promotion-Design',
+      'Discovering Thuringia Series': 'Thüringen entdecken',
+      'Designed multi-channel promotional posters for student excursions to Eisenach (Wartburg Castle), Erfurt Zoo, Laser Tag, and the Erfurt Christmas Market, consistently driving 20-30 attendees per trip.': 'Gestaltung kanalübergreifender Werbeplakate für Studierendenausflüge nach Eisenach (Wartburg), in den Erfurter Zoo, zum Laser Tag und zum Erfurter Weihnachtsmarkt. Jede Fahrt erreichte regelmäßig 20 bis 30 Teilnehmende.',
+      '03.5 / E-Commerce Catalog': '03.5 / E-Commerce-Katalog',
+      'Barthelmes Tuning Fork Collection': 'Barthelmes-Stimmgabel-Kollektion',
+      'Produced 279+ product visuals across four product versions and categories (Medicine, Therapy, Personalized, Lifestyle), while refining product descriptions in Shopify and plentymarkets.': 'Erstellung von über 279 Produktvisuals für vier Produktvarianten und Kategorien (Medizin, Therapie, personalisiert, Lifestyle) sowie Optimierung von Produktbeschreibungen in Shopify und plentymarkets.',
+      'education': 'Ausbildung',
+      '2023 - Present': '2023 - heute',
+      'Schmalkalden University of Applied Sciences': 'Hochschule Schmalkalden',
+      'Major in Multimedia Marketing': 'Studiengang Multimedia-Marketing',
+      'Vice President of Media & Marketing Department at DEGIS Schmalkalden.': 'Vizepräsidentin der Medien- und Marketingabteilung bei DEGIS Schmalkalden.',
+      '05 / Let’s Connect': '05 / Kontakt',
+      '05 / Let\'s Connect': '05 / Kontakt',
+      'Ready to make some': 'Lust, online',
+      'noise': 'Aufmerksamkeit',
+      'online?': 'zu erzeugen?',
+      'Martin-Luther-Ring 03, 98547 Schmalkalden, Germany (relocation possible).': 'Martin-Luther-Ring 03, 98547 Schmalkalden, Deutschland (Umzug möglich).',
+      'Click any project visual to inspect full size': 'Klicken Sie auf ein Projektbild, um es zu vergrößern'
+    };
+
+    const languageToggle = document.getElementById('language-toggle');
+    const themeToggle = document.getElementById('theme-toggle');
+    const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const originalTextNodes = [];
+    while (textWalker.nextNode()) {
+      const node = textWalker.currentNode;
+      if (node.textContent.trim()) {
+        originalTextNodes.push({ node, original: node.textContent });
+      }
+    }
+
+    function setLanguage(language) {
+      const german = language === 'de';
+      originalTextNodes.forEach(({ node, original }) => {
+        const text = original.trim();
+        node.textContent = german && germanTranslations[text]
+          ? original.replace(text, germanTranslations[text])
+          : original;
+      });
+      document.documentElement.lang = language;
+      document.title = german ? 'Sherry Huynh - Portfolio' : 'Sherry Huynh - Portfolio';
+      languageToggle.textContent = german ? 'EN' : 'DE';
+      languageToggle.setAttribute('aria-label', german ? 'Sprache auf Englisch umstellen' : 'Switch language to German');
+      themeToggle.textContent = document.body.classList.contains('dark-mode')
+        ? (german ? 'Hell' : 'Light')
+        : (german ? 'Dunkel' : 'Dark');
+      themeToggle.setAttribute('aria-label', document.body.classList.contains('dark-mode')
+        ? (german ? 'Zum hellen Modus wechseln' : 'Switch to bright mode')
+        : (german ? 'Zum dunklen Modus wechseln' : 'Switch to dark mode'));
+      localStorage.setItem('portfolio-language', language);
+    }
+
+    function setTheme(isDark) {
+      document.body.classList.toggle('dark-mode', isDark);
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      setLanguage(localStorage.getItem('portfolio-language') || 'en');
+      localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+    }
+
+    languageToggle.addEventListener('click', () => {
+      setLanguage(document.documentElement.lang === 'de' ? 'en' : 'de');
+    });
+    themeToggle.addEventListener('click', () => {
+      setTheme(!document.body.classList.contains('dark-mode'));
+    });
+    setTheme(localStorage.getItem('portfolio-theme') === 'dark');
   </script>
 </body>
 </html>
