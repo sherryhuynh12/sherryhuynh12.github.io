@@ -3,407 +3,550 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sherry Huynh | Social Media & Multimedia Marketer</title>
+  <title>Sherry Huynh — Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'serif'],
           },
           colors: {
-            brand: {
-              navy: '#0F2544',
-              blue: '#1E40AF',
-              gold: '#F59E0B',
-              light: '#F8FAFC'
-            }
+            paper: '#F7F6F2',
+            ink: '#141413',
+            cobalt: '#1D4ED8',
+            crimson: '#D93829',
+            muted: '#6E6D68',
+            line: '#DCDAD3'
           }
         }
       }
     }
   </script>
+  <style>
+    body {
+      background-color: #F7F6F2;
+      color: #141413;
+    }
+    .vertical-label {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+    .editorial-grid {
+      background-image: linear-gradient(to right, rgba(20, 20, 19, 0.04) 1px, transparent 1px);
+      background-size: 25% 100%;
+    }
+  </style>
 </head>
-<body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-gold selection:text-brand-navy">
+<body class="antialiased selection:bg-cobalt selection:text-white">
 
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-xl font-extrabold tracking-tight text-brand-navy">
-        Sherry<span class="text-brand-gold">.</span>
+  <!-- Top Minimalist Bar -->
+  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-4 flex items-center justify-between text-xs uppercase tracking-widest font-semibold">
+      <a href="#" class="flex items-center gap-2 text-ink">
+        <span class="w-2.5 h-2.5 rounded-full bg-crimson inline-block"></span>
+        <span>Sherry Huynh — Portfolio</span>
       </a>
-      <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
-        <a href="#about" class="hover:text-brand-navy transition">About</a>
-        <a href="#experience" class="hover:text-brand-navy transition">Experience</a>
-        <a href="#projects" class="hover:text-brand-navy transition">Projects</a>
-        <a href="#education" class="hover:text-brand-navy transition">Education</a>
-        <a href="#contact" class="hover:text-brand-navy transition">Contact</a>
-      </div>
-      <a href="#contact" class="bg-brand-navy text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-brand-blue transition">
-        Let's Connect
+      <nav class="hidden md:flex items-center gap-8 text-muted">
+        <a href="#about" class="hover:text-ink transition">01 / About</a>
+        <a href="#experience" class="hover:text-ink transition">02 / Experience</a>
+        <a href="#projects" class="hover:text-ink transition">03 / Selected Work</a>
+        <a href="#education" class="hover:text-ink transition">04 / Education</a>
+        <a href="#contact" class="hover:text-crimson transition">05 / Contact</a>
+      </nav>
+      <a href="#contact" class="border border-ink px-4 py-1.5 rounded-full hover:bg-ink hover:text-paper transition">
+        Get in touch
       </a>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header id="about" class="relative overflow-hidden bg-brand-navy text-white py-20 lg:py-28">
-    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center space-x-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 text-sm font-medium text-amber-300">
-          <span>Social Media & Multimedia Marketer</span>
-        </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-          Hello, I'm <span class="text-brand-gold">Sherry Huynh</span>
-        </h1>
-        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Social media strategist obsessed with impact — turning trends into growth and data into direction. I blend creativity with smart strategy to craft content that sparks conversation, builds brand loyalty, and helps brands stand out in crowded feeds[cite: 2].
-        </p>
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a href="#projects" class="bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-xl hover:bg-amber-400 transition shadow-lg">
-            View Highlighted Work
-          </a>
-          <a href="#experience" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl border border-white/20 transition">
-            Explore Experience
-          </a>
-        </div>
-      </div>
-
-      <!-- Key Metrics Card -->
-      <div class="lg:col-span-5">
-        <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 sm:p-8 space-y-6">
-          <h2 class="text-sm font-bold uppercase tracking-wider text-amber-300">Career Impact Snapshot</h2>
-          <div class="grid grid-cols-2 gap-6">
-            <div>
-              <div class="text-3xl font-extrabold text-white">+69%</div>
-              <div class="text-xs text-slate-300 mt-1">Instagram Follower Growth (DEGIS)[cite: 4]</div>
-            </div>
-            <div>
-              <div class="text-3xl font-extrabold text-white">10,000+</div>
-              <div class="text-xs text-slate-300 mt-1">2-Week Event Campaign Reach[cite: 10]</div>
-            </div>
-            <div>
-              <div class="text-3xl font-extrabold text-white">5 Countries</div>
-              <div class="text-xs text-slate-300 mt-1">Multi-Market IG Strategy (US, IT, NO, UA, BE)[cite: 20]</div>
-            </div>
-            <div>
-              <div class="text-3xl font-extrabold text-white">400+</div>
-              <div class="text-xs text-slate-300 mt-1">Brand & E-Commerce Visuals Created[cite: 6, 18]</div>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-white/15">
-            <p class="text-xs text-slate-300">
-              <strong class="text-white">Core Toolkit:</strong> Instagram, Facebook, TikTok/Reels, Canva, CapCut, Shopify, plentymarkets, Competitive Analytics[cite: 6, 10, 15, 20]
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </header>
 
-  <!-- Experience Section -->
-  <section id="experience" class="py-20 max-w-6xl mx-auto px-6">
-    <div class="mb-12">
-      <span class="text-sm font-bold uppercase tracking-wider text-brand-blue">Career Journey</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Work & Leadership Experience</h2>
-    </div>
+  <!-- HERO SECTION -->
+  <section class="relative border-b border-line editorial-grid">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Column: Editorial Typography -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="flex items-center gap-3">
+            <span class="text-sm font-bold tracking-widest uppercase text-cobalt">2026 Edition</span>
+            <span class="h-px w-12 bg-cobalt"></span>
+            <span class="text-xs uppercase tracking-widest text-muted">Social Media & Multimedia Marketer</span>
+          </div>
 
-    <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-200">
+          <div class="relative inline-block">
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95] text-ink">
+              Hello, I’m<br/>
+              <span class="text-cobalt relative inline-block">
+                Sherry Huynh
+                <!-- Hand-drawn SVG oval accent inspired by reference -->
+                <svg class="absolute -inset-x-3 -inset-y-2 w-[calc(100%+1.5rem)] h-[calc(100%+1rem)] pointer-events-none text-cobalt/70" viewBox="0 0 320 90" fill="none">
+                  <ellipse cx="160" cy="45" rx="154" ry="38" stroke="currentColor" stroke-width="2" transform="rotate(-1.5 160 45)"/>
+                </svg>
+              </span>
+            </h1>
+          </div>
 
-      <!-- Experience 1: Jesus Revolution (Latest) -->
-      <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-gold text-brand-navy font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-          ★
-        </div>
-        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-gold transition">
-          <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
+          <p class="text-lg sm:text-xl text-ink/80 max-w-xl leading-relaxed font-medium">
+            Social media strategist obsessed with impact — turning trends into growth and data into direction. Blending creativity with smart strategy for campaigns that spark conversation and build brand loyalty.
+          </p>
+
+          <!-- Key Numbers Strip -->
+          <div class="grid grid-cols-3 gap-6 pt-6 border-t border-line max-w-xl">
             <div>
-              <span class="inline-block text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full mb-1">Latest Role</span>
-              <h3 class="text-xl font-bold text-brand-navy">Marketing & Communication Intern[cite: 20]</h3>
-              <p class="text-sm font-semibold text-brand-blue">Jesus Revolution — Oslo, Norway[cite: 20]</p>
+              <div class="text-3xl sm:text-4xl font-extrabold text-ink">+69<span class="text-crimson">%</span></div>
+              <p class="text-xs text-muted mt-1 uppercase tracking-wider">IG Follower Growth</p>
             </div>
-            <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">04.2026 – 08.2026[cite: 20]</span>
-          </div>
-          <ul class="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
-            <li>Developed and executed social media strategies for Instagram channels across <strong>5 national bases</strong> (US, Italy, Norway, Ukraine, Belgium)[cite: 20].</li>
-            <li>Collaborated with global team leaders to align strategy across diverse cultural contexts and redirect content direction[cite: 20].</li>
-            <li>Performed competitive analysis of internal and external data across all 5 Instagram channels[cite: 20].</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Experience 2: Barthelmes GmbH -->
-      <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-navy text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-          2
-        </div>
-        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-          <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
             <div>
-              <h3 class="text-xl font-bold text-brand-navy">Social Media & E-Commerce Assistant[cite: 15, 18]</h3>
-              <p class="text-sm font-semibold text-brand-blue">Barthelmes GmbH — Germany[cite: 15]</p>
+              <div class="text-3xl sm:text-4xl font-extrabold text-ink">10K<span class="text-cobalt">+</span></div>
+              <p class="text-xs text-muted mt-1 uppercase tracking-wider">2-Week Campaign Reach</p>
             </div>
-          </div>
-          <ul class="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
-            <li>Designed <strong>279+ product visuals</strong> and managed online store content using <strong>Shopify, plentymarkets, and Canva</strong>[cite: 15, 18].</li>
-            <li>Edited and refined product listings across four tuning fork categories (Medicine, Therapy, Personalized, Lifestyle) to improve UX and customer decision-making[cite: 15, 17, 18].</li>
-            <li>Organized product collections and maintained cohesive visual branding across storefront pages[cite: 15].</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Experience 3: DEGIS Schmalkalden -->
-      <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-navy text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-          3
-        </div>
-        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-          <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
             <div>
-              <h3 class="text-xl font-bold text-brand-navy">Vice President of Media & Marketing[cite: 4]</h3>
-              <p class="text-sm font-semibold text-brand-blue">DEGIS Schmalkalden (1.5+ Years)[cite: 4, 6]</p>
+              <div class="text-3xl sm:text-4xl font-extrabold text-ink">400<span class="text-crimson">+</span></div>
+              <p class="text-xs text-muted mt-1 uppercase tracking-wider">Visual Assets Created</p>
             </div>
           </div>
-          <ul class="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
-            <li>Led media strategy and a team of 5, boosting Instagram reach by <strong>43%</strong> and followers by <strong>69%</strong>[cite: 4].</li>
-            <li>Created <strong>130+ promotional designs</strong> and edited event Reels/videos across Instagram, Facebook, and WhatsApp[cite: 6, 10].</li>
-            <li>Spearheaded major campus initiatives including <em>One World Fiesta 2024</em> (300+ attendees) and the DAAD-funded <em>Buddy Program</em>[cite: 4, 10, 11].</li>
-          </ul>
         </div>
-      </div>
 
-      <!-- Experience 4: STEP Forward Education -->
-      <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand-navy text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-          4
+        <!-- Right Column: Asymmetric Editorial Image Composition -->
+        <div class="lg:col-span-5 relative flex items-center justify-center">
+          <div class="relative w-full max-w-md">
+            <!-- Red editorial accent dot -->
+            <div class="w-14 h-14 rounded-full bg-crimson absolute -top-5 -left-5 z-10 shadow-sm"></div>
+            
+            <!-- Main Portrait -->
+            <div class="aspect-[3/4] overflow-hidden bg-stone-200 border border-ink/10 shadow-sm">
+              <img src="images/hero_portrait.jpg" alt="Sherry Huynh Portrait" class="w-full h-full object-cover object-center" />
+            </div>
+
+            <!-- Vertical rotated label on right edge -->
+            <div class="hidden sm:flex items-center gap-3 absolute -right-10 bottom-6">
+              <span class="vertical-label text-xs font-extrabold uppercase tracking-[0.25em] text-crimson">
+                portfolio
+              </span>
+            </div>
+
+            <!-- Floating caption card -->
+            <div class="bg-paper border border-ink px-4 py-3 mt-4 flex items-center justify-between text-xs">
+              <span class="font-bold uppercase tracking-wider">Schmalkalden / Oslo</span>
+              <span class="text-muted">Open to relocation</span>
+            </div>
+          </div>
         </div>
-        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-          <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
-            <div>
-              <h3 class="text-xl font-bold text-brand-navy">Communication & Event Supporter[cite: 4]</h3>
-              <p class="text-sm font-semibold text-brand-blue">STEP Forward Education[cite: 4]</p>
-            </div>
-          </div>
-          <ul class="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
-            <li>Created content and photographed <strong>20+ educational events</strong> and workshops[cite: 4].</li>
-            <li>Supported a social campaign that generated <strong>1,000+ Facebook likes in 3 weeks</strong>[cite: 4].</li>
-            <li>Conducted surveys and interviews with <strong>2,000+ participants</strong> to guide event programming[cite: 4].</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Highlighted Projects Section -->
-  <section id="projects" class="py-20 bg-slate-100 border-y border-slate-200">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-        <div>
-          <span class="text-sm font-bold uppercase tracking-wider text-brand-blue">Case Studies & Campaigns</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Highlighted Projects</h2>
-        </div>
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-2" id="filter-buttons">
-          <button onclick="filterProjects('all')" class="filter-btn active bg-brand-navy text-white px-4 py-2 rounded-lg text-sm font-semibold transition">All</button>
-          <button onclick="filterProjects('social')" class="filter-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition">Social Campaigns</button>
-          <button onclick="filterProjects('events')" class="filter-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition">Event Marketing</button>
-          <button onclick="filterProjects('ecommerce')" class="filter-btn bg-white text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-sm font-semibold transition">E-Commerce</button>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
-
-        <!-- Project 1: Multi-National IG Strategy -->
-        <article data-category="social" class="project-card bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition">
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-3 py-1 rounded-full">Global Social Strategy</span>
-              <span class="text-xs text-slate-400 font-semibold">2026</span>
-            </div>
-            <h3 class="text-xl font-bold text-brand-navy">5-Country Instagram Channel Growth[cite: 20]</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Audited internal and external performance metrics and tailored Instagram content direction for Jesus Revolution bases across the US, Italy, Norway, Ukraine, and Belgium[cite: 20].
-            </p>
-          </div>
-          <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center text-xs font-semibold text-brand-navy">
-            <span>Competitive Data Analysis[cite: 20]</span>
-            <span>5 International Markets[cite: 20]</span>
-          </div>
-        </article>
-
-        <!-- Project 2: One World Fiesta 2024 -->
-        <article data-category="events social" class="project-card bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition">
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100 px-3 py-1 rounded-full">Flagship Event</span>
-              <span class="text-xs text-slate-400 font-semibold">Nov 2024[cite: 9]</span>
-            </div>
-            <h3 class="text-xl font-bold text-brand-navy">One World Fiesta 2024[cite: 8]</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Coordinated Schmalkalden's largest multicultural celebration (4 continents, 10+ countries) with a 30-member team[cite: 8, 10]. Designed teaser campaigns, prize reveals, and Reels that scaled reach from 2,500 to 10,000+ in two weeks[cite: 9, 10].
-            </p>
-          </div>
-          <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center text-xs font-semibold text-brand-navy">
-            <span>300+ Attendees[cite: 10]</span>
-            <span>4x Instagram Reach[cite: 10]</span>
-          </div>
-        </article>
-
-        <!-- Project 3: Tuning Fork E-Commerce Collection -->
-        <article data-category="ecommerce" class="project-card bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition">
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">E-Commerce Visuals</span>
-              <span class="text-xs text-slate-400 font-semibold">Barthelmes GmbH[cite: 17]</span>
-            </div>
-            <h3 class="text-xl font-bold text-brand-navy">Barthelmes Tuning Fork Storefront[cite: 17]</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Produced 279+ standardized product visuals and refined German/English product copy across four product lines in Shopify and plentymarkets[cite: 15, 17, 18].
-            </p>
-          </div>
-          <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center text-xs font-semibold text-brand-navy">
-            <span>279+ Designs[cite: 18]</span>
-            <span>Shopify & plentymarkets[cite: 18]</span>
-          </div>
-        </article>
-
-        <!-- Project 4: "Are You New Here?" Series -->
-        <article data-category="social" class="project-card bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition">
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-3 py-1 rounded-full">Content Series</span>
-              <span class="text-xs text-slate-400 font-semibold">WS 24/25[cite: 13]</span>
-            </div>
-            <h3 class="text-xl font-bold text-brand-navy">"Are You New Here?" IG Guide[cite: 13]</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Created an onboarding carousel series answering incoming international students' real questions—covering local shopping, campus activities, and English-speaking doctors[cite: 13, 14].
-            </p>
-          </div>
-          <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center text-xs font-semibold text-brand-navy">
-            <span>High Save & Share Rate</span>
-            <span>Community Onboarding[cite: 13, 14]</span>
-          </div>
-        </article>
-
-        <!-- Project 5: Buddy Program 2024 -->
-        <article data-category="events social" class="project-card bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition">
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100 px-3 py-1 rounded-full">DAAD STIBET Initiative[cite: 11]</span>
-              <span class="text-xs text-slate-400 font-semibold">2024[cite: 11]</span>
-            </div>
-            <h3 class="text-xl font-bold text-brand-navy">Hochschule Schmalkalden Buddy Program[cite: 12]</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Partnered with the University International Office to promote mentor recruitment and spotlight mentor-mentee stories, supporting 20 mentors and ~100 new international students[cite: 11, 12].
-            </p>
-          </div>
-          <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center text-xs font-semibold text-brand-navy">
-            <span>120+ Participants[cite: 11]</span>
-            <span>Cross-Institutional Campaign[cite: 11]</span>
-          </div>
-        </article>
-
-        <!-- Project 6: Discovering Thuringia -->
-        <article data-category="events" class="project-card bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition">
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-100 px-3 py-1 rounded-full">Regional Excursion Series</span>
-              <span class="text-xs text-slate-400 font-semibold">2024[cite: 7]</span>
-            </div>
-            <h3 class="text-xl font-bold text-brand-navy">Discovering Thuringia Excursions[cite: 7]</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Designed multi-channel promotional posters and registration funnels for student trips to Eisenach (Wartburg Castle), Erfurt Zoo, Laser Tag, and Christmas Markets[cite: 7].
-            </p>
-          </div>
-          <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center text-xs font-semibold text-brand-navy">
-            <span>20–30 Attendees / Trip[cite: 7]</span>
-            <span>IG, FB & WhatsApp[cite: 7]</span>
-          </div>
-        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- Education & Languages -->
-  <section id="education" class="py-20 max-w-6xl mx-auto px-6">
-    <div class="mb-12">
-      <span class="text-sm font-bold uppercase tracking-wider text-brand-blue">Academic Background</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Education & Certifications</h2>
-    </div>
+  <!-- SECTION 01: ABOUT ME -->
+  <section id="about" class="border-b border-line">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Oversized Overlapping Index Number -->
+        <div class="lg:col-span-4 relative">
+          <div class="relative inline-flex items-center">
+            <span class="text-8xl sm:text-9xl font-extrabold tracking-tighter text-ink/10 select-none">01</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-cobalt -ml-10">about me</h2>
+          </div>
+          <p class="mt-4 text-sm text-muted leading-relaxed">
+            Multilingual marketer working across English, German (B2/C1), and Vietnamese — bridging international audiences through community storytelling, structured workflows, and data-backed content.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">Instagram & Reels</span>
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">Canva & CapCut</span>
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">Shopify</span>
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">plentymarkets</span>
+            <span class="text-xs font-semibold border border-ink/30 px-3 py-1 rounded-full">Competitive Analysis</span>
+          </div>
+        </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-        <span class="text-xs font-bold text-brand-blue bg-blue-50 px-3 py-1 rounded-full">2023 – Present[cite: 3]</span>
-        <h3 class="text-lg font-bold text-brand-navy mt-4">Schmalkalden University of Applied Sciences[cite: 3]</h3>
-        <p class="text-sm font-semibold text-slate-700 mt-1">B.A. Multimedia Marketing[cite: 3]</p>
-        <p class="text-sm text-slate-500 mt-2">Vice President of Media & Marketing Department at DEGIS Schmalkalden[cite: 3].</p>
-      </div>
+        <!-- Photo Collage & Philosophy -->
+        <div class="lg:col-span-8 grid sm:grid-cols-12 gap-6 items-center">
+          <div class="sm:col-span-5">
+            <div class="aspect-[3/4] overflow-hidden border border-ink/10 bg-stone-200">
+              <img src="images/about_team_1.jpg" alt="DEGIS Team" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="sm:col-span-7 space-y-6">
+            <div class="aspect-[16/10] overflow-hidden border border-ink/10 bg-stone-200 relative">
+              <img src="images/about_team_2.jpg" alt="Community Night Event" class="w-full h-full object-cover" />
+              <span class="w-8 h-8 rounded-full bg-crimson absolute top-3 right-3"></span>
+            </div>
+            <div class="space-y-3 text-sm sm:text-base text-ink/85 leading-relaxed">
+              <p>
+                Whether scaling multi-country Instagram channels across Europe and the US, leading a campus marketing team of five in Germany, or building 279+ e-commerce visuals from scratch, I focus on clarity, consistency, and measurable reach.
+              </p>
+              <p class="font-semibold text-ink">
+                Helping brands connect, grow, and stand out in crowded feeds.
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-        <span class="text-xs font-bold text-brand-blue bg-blue-50 px-3 py-1 rounded-full">2022 – 2023[cite: 3]</span>
-        <h3 class="text-lg font-bold text-brand-navy mt-4">DKFA Munich[cite: 3]</h3>
-        <p class="text-sm font-semibold text-slate-700 mt-1">Intensive German Language Program (A1–C1)[cite: 3]</p>
-        <p class="text-sm text-slate-500 mt-2">Deutschkurse bei der Universität München e.V. — Achieved B2 certification within 8 months[cite: 3].</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-        <span class="text-xs font-bold text-brand-blue bg-blue-50 px-3 py-1 rounded-full">2019 – 2022[cite: 3]</span>
-        <h3 class="text-lg font-bold text-brand-navy mt-4">Phu My High School[cite: 3]</h3>
-        <p class="text-sm font-semibold text-slate-700 mt-1">Head of Media Department[cite: 3]</p>
-        <p class="text-sm text-slate-500 mt-2">Led student media production and digital communications for PMEC (Phu My English Club)[cite: 3].</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Footer -->
-  <footer id="contact" class="bg-brand-navy text-white py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-      <h2 class="text-3xl sm:text-5xl font-extrabold">Ready to make some noise online?[cite: 19]</h2>
-      <p class="text-slate-300 text-lg max-w-xl mx-auto">
-        Based in Schmalkalden, Germany (open to relocation)[cite: 19]. Let's talk social strategy, content creation, or upcoming campaigns[cite: 2, 19].
-      </p>
-
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-        <a href="mailto:huynhnguyentramanh1302@gmail.com" class="w-full sm:w-auto bg-brand-gold text-brand-navy font-bold px-8 py-4 rounded-xl hover:bg-amber-400 transition">
-          huynhnguyentramanh1302@gmail.com[cite: 19]
-        </a>
-        <a href="https://wa.me/491785262364" target="_blank" rel="noopener" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl transition">
-          WhatsApp: +49 178 5262364[cite: 19]
-        </a>
+  <!-- SECTION 02: EXPERIENCE TIMELINE -->
+  <section id="experience" class="border-b border-line bg-white/50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-20 lg:py-28">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="relative inline-flex items-center">
+          <span class="text-8xl sm:text-9xl font-extrabold tracking-tighter text-ink/10 select-none">02</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-ink -ml-10">experience</h2>
+        </div>
+        <p class="text-sm text-muted max-w-md">
+          International agency/NGO communication, e-commerce content operations, and student organization leadership.
+        </p>
       </div>
 
-      <p class="text-xs text-slate-400 pt-12">
-        © 2026 Sherry Huynh (Huynh Nguyen Tram Anh). Built for GitHub Pages.
-      </p>
+      <div class="space-y-12">
+
+        <!-- Role 1: Jesus Revolution (Latest) -->
+        <div class="grid lg:grid-cols-12 gap-8 pb-12 border-b border-line items-start">
+          <div class="lg:col-span-3">
+            <span class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-crimson">
+              <span class="w-2 h-2 rounded-full bg-crimson"></span>
+              04.2026 – 08.2026
+            </span>
+            <h3 class="text-xl font-extrabold text-ink mt-2">Jesus Revolution</h3>
+            <p class="text-sm text-muted">Oslo, Norway</p>
+          </div>
+          <div class="lg:col-span-9 space-y-4">
+            <h4 class="text-2xl font-bold text-cobalt">Marketing & Communication Intern</h4>
+            <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
+              <li>Developed and executed social media strategies for Instagram channels across <strong>5 national bases</strong> (US, Italy, Norway, Ukraine, Belgium).</li>
+              <li>Collaborated with global team leaders to align strategy across diverse cultural contexts and redirect content direction.</li>
+              <li>Performed competitive analysis of internal and external data across all 5 Instagram channels.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 2: Barthelmes GmbH -->
+        <div class="grid lg:grid-cols-12 gap-8 pb-12 border-b border-line items-start">
+          <div class="lg:col-span-3">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-muted">E-Commerce & Social</span>
+            <h3 class="text-xl font-extrabold text-ink mt-2">Barthelmes GmbH</h3>
+            <p class="text-sm text-muted">Germany</p>
+          </div>
+          <div class="lg:col-span-6 space-y-4">
+            <h4 class="text-2xl font-bold text-ink">Social Media Assistant</h4>
+            <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
+              <li>Designed and managed product content for online stores using <strong>Shopify, plentymarkets, and Canva</strong>.</li>
+              <li>Created <strong>279+ product visuals</strong> and updated product listings with accurate, compelling descriptions.</li>
+              <li>Organized product collections for easier navigation, improved UX, and consistent storefront branding.</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="aspect-[16/10] overflow-hidden border border-ink/10">
+              <img src="images/exp_barthelmes.jpg" alt="Working at Barthelmes GmbH" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Role 3: DEGIS Schmalkalden -->
+        <div class="grid lg:grid-cols-12 gap-8 pb-12 border-b border-line items-start">
+          <div class="lg:col-span-3">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-muted">1.5+ Years Leadership</span>
+            <h3 class="text-xl font-extrabold text-ink mt-2">DEGIS Schmalkalden</h3>
+            <p class="text-sm text-muted">Schmalkalden, Germany</p>
+          </div>
+          <div class="lg:col-span-9 space-y-4">
+            <h4 class="text-2xl font-bold text-ink">Vice President of Media & Marketing Department</h4>
+            <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
+              <li>Led media strategy and a team of 5; boosted Instagram reach by <strong>43%</strong> and followers by <strong>69%</strong>.</li>
+              <li>Built structured marketing workflows and produced <strong>130+ promotional designs</strong> and Reels across Instagram, Facebook, and WhatsApp.</li>
+              <li>Drove flagship student events including <em>One World Fiesta 2024</em> and the DAAD-funded <em>Buddy Program</em>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 4: STEP Forward Education -->
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-3">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-muted">Events & Research</span>
+            <h3 class="text-xl font-extrabold text-ink mt-2">STEP Forward Education</h3>
+            <p class="text-sm text-muted">Vietnam</p>
+          </div>
+          <div class="lg:col-span-6 space-y-4">
+            <h4 class="text-2xl font-bold text-ink">Communication & Event Supporter</h4>
+            <ul class="space-y-2.5 text-sm sm:text-base text-ink/85 list-disc list-outside ml-5">
+              <li>Created content and photographed <strong>20+ educational events</strong> and developed activities for 20+ workshops.</li>
+              <li>Assisted a Facebook campaign that gained <strong>1,000+ likes in 3 weeks</strong>.</li>
+              <li>Conducted surveys and interviews with <strong>2,000+ participants</strong>.</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="aspect-[16/10] overflow-hidden border border-ink/10">
+              <img src="images/exp_step.jpg" alt="STEP Forward Education Workshop" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03: SELECTED WORK (WITH REAL PORTFOLIO IMAGES) -->
+  <section id="projects" class="border-b border-line">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-20 lg:py-28">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div class="relative inline-flex items-center">
+          <span class="text-8xl sm:text-9xl font-extrabold tracking-tighter text-ink/10 select-none">03</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-cobalt -ml-10">selected work</h2>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-wider">
+          <button onclick="filterProjects('all', this)" class="filter-btn bg-ink text-paper px-4 py-2 rounded-full transition">All Projects</button>
+          <button onclick="filterProjects('campaigns', this)" class="filter-btn border border-ink/30 text-ink hover:border-ink px-4 py-2 rounded-full transition">Campaigns & Events</button>
+          <button onclick="filterProjects('series', this)" class="filter-btn border border-ink/30 text-ink hover:border-ink px-4 py-2 rounded-full transition">Content Series</button>
+          <button onclick="filterProjects('ecommerce', this)" class="filter-btn border border-ink/30 text-ink hover:border-ink px-4 py-2 rounded-full transition">E-Commerce</button>
+        </div>
+      </div>
+
+      <div class="space-y-24">
+
+        <!-- CASE STUDY 03.1: One World Fiesta 2024 -->
+        <article data-category="campaigns" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-crimson">1.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.1 / Flagship Cultural Event</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">One World Fiesta 2024</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Coordinated Schmalkalden’s largest cultural festival with a 30-member team, uniting students from 4 continents and 10+ countries through fashion, dance, cuisine, and music.
+            </p>
+            <div class="bg-white p-4 border border-line space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-muted">Event Attendance</span>
+                <span class="font-extrabold text-ink">300+ Guests</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">Instagram Reach (2 Weeks)</span>
+                <span class="font-extrabold text-cobalt">2,500 → 10,000+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <img src="images/proj_fiesta_poster.jpg" alt="One World Fiesta Main Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_fiesta_timeline.jpg" alt="One World Fiesta Schedule" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_fiesta_cuisine.jpg" alt="National Cuisine Promo" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_fiesta_photo1.jpg" alt="One World Fiesta Crowd" class="w-full aspect-[4/3] object-cover border border-ink/10 sm:col-span-2 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_fiesta_photo2.jpg" alt="One World Fiesta Stage Performance" class="w-full aspect-[4/3] object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+        <!-- CASE STUDY 03.2: Buddy Program 2024 -->
+        <article data-category="campaigns" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-cobalt">2.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.2 / DAAD STIBET Initiative</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">Hochschule Schmalkalden Buddy Program</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Collaborated with the University International Office and DEGIS national team to lead Instagram recruitment and community storytelling for international student integration.
+            </p>
+            <div class="bg-white p-4 border border-line space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-muted">Community Supported</span>
+                <span class="font-extrabold text-ink">20 Mentors & ~100 Mentees</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-muted">Funding Partner</span>
+                <span class="font-extrabold text-cobalt">DAAD STIBET</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <img src="images/proj_buddy_poster.jpg" alt="Buddy Program Instagram Graphic" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_buddy_photo1.jpg" alt="Buddy Program Orientation" class="w-full aspect-[4/3] sm:aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_buddy_photo2.jpg" alt="Buddy Program Certificate Ceremony" class="w-full aspect-[4/3] sm:aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+        <!-- CASE STUDY 03.3: "Are You New Here?" Series -->
+        <article data-category="series" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-crimson">3.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.3 / Instagram Content Series</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">“Are You New Here?” Onboarding Guide</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Created an informational Instagram carousel series for Winter Semester 24/25 arrivals—turning real student questions on local shopping, events, gyms, and English-speaking doctors into digestible visual guides.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <img src="images/proj_new_cover.jpg" alt="Are You New Here Cover" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_new_1.jpg" alt="Part 1 Where should I buy" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_new_2.jpg" alt="Part 2 Cool activities" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_new_3.jpg" alt="Part 3 English speaking doctors" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+        <!-- CASE STUDY 03.4: Discovering Thuringia Excursions -->
+        <article data-category="campaigns series" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-cobalt">4.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.4 / Event Promotion Design</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">Discovering Thuringia Series</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Designed multi-channel promotional posters for student excursions to Eisenach (Wartburg Castle), Erfurt Zoo, Laser Tag, and the Erfurt Christmas Market—consistently driving 20–30 attendees per trip.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <img src="images/proj_thuringia_1.jpg" alt="Trip to Eisenach Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_thuringia_2.jpg" alt="Erfurt Zoo Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_thuringia_3.jpg" alt="Laser Tag Battle Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+            <img src="images/proj_thuringia_4.jpg" alt="Christmas Market Erfurt Poster" class="w-full aspect-square object-cover border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+        <!-- CASE STUDY 03.5: Barthelmes Tuning Fork E-Commerce -->
+        <article data-category="ecommerce" class="project-item grid lg:grid-cols-12 gap-10 items-start pt-8 border-t border-line">
+          <div class="lg:col-span-4 space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl font-extrabold text-crimson">5.</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-muted">03.5 / E-Commerce Catalog</span>
+            </div>
+            <h3 class="text-3xl font-extrabold text-ink leading-tight">Barthelmes Tuning Fork Collection</h3>
+            <p class="text-sm text-ink/80 leading-relaxed">
+              Produced 279+ product visuals across four product versions and categories (Medicine, Therapy, Personalized, Lifestyle), while refining product descriptions in Shopify and plentymarkets.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8">
+            <img src="images/proj_barthelmes_shop.jpg" alt="Barthelmes Marketplace Storefront" class="w-full max-h-96 object-cover object-top border border-ink/10 cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)" />
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04: EDUCATION -->
+  <section id="education" class="border-b border-line bg-white/50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-20 lg:py-28">
+      <div class="relative inline-flex items-center mb-14">
+        <span class="text-8xl sm:text-9xl font-extrabold tracking-tighter text-ink/10 select-none">04</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-ink -ml-10">education</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="border border-line bg-paper p-8 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-cobalt">2023 – Present</span>
+          <h3 class="text-xl font-extrabold text-ink">Schmalkalden University of Applied Sciences</h3>
+          <p class="text-sm font-semibold text-ink/80">Major in Multimedia Marketing</p>
+          <p class="text-sm text-muted">Vice President of Media & Marketing Department at DEGIS Schmalkalden.</p>
+        </div>
+
+        <div class="border border-line bg-paper p-8 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-crimson">2022 – 2023</span>
+          <h3 class="text-xl font-extrabold text-ink">DKFA Munich</h3>
+          <p class="text-sm font-semibold text-ink/80">German Language Courses (A1 – C1)</p>
+          <p class="text-sm text-muted">Deutschkurse bei der Universität München e.V. — Achieved B2 certification within 8 months.</p>
+        </div>
+
+        <div class="border border-line bg-paper p-8 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-muted">2019 – 2022</span>
+          <h3 class="text-xl font-extrabold text-ink">Phu My High School</h3>
+          <p class="text-sm font-semibold text-ink/80">Head of Media Department</p>
+          <p class="text-sm text-muted">Led media production and visual campaigns for PMEC — Phu My English Club.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05: CONTACT -->
+  <footer id="contact" class="bg-ink text-paper">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 items-end">
+        <div class="lg:col-span-8 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-crimson"></span>
+            <span class="text-xs font-bold uppercase tracking-widest text-stone-400">05 / Let's Connect</span>
+          </div>
+          <h2 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none">
+            Ready to make some <span class="text-crimson">noise</span> online?
+          </h2>
+          <p class="text-stone-400 max-w-lg text-base">
+            Martin-Luther-Ring 03, 98547 Schmalkalden, Germany (relocation possible).
+          </p>
+        </div>
+
+        <div class="lg:col-span-4 space-y-4">
+          <a href="mailto:huynhnguyentramanh1302@gmail.com" class="block w-full text-center bg-paper text-ink font-bold text-sm px-6 py-4 rounded-full hover:bg-cobalt hover:text-white transition">
+            huynhnguyentramanh1302@gmail.com
+          </a>
+          <a href="https://wa.me/491785262364" target="_blank" rel="noopener" class="block w-full text-center border border-stone-600 text-paper font-semibold text-sm px-6 py-4 rounded-full hover:border-crimson hover:text-crimson transition">
+            WhatsApp: +49 178 5262364
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-4">
+        <span>© 2026 Sherry Huynh (Huynh Nguyen Tram Anh)</span>
+        <span>Click any project visual to inspect full size</span>
+      </div>
     </div>
   </footer>
 
-  <!-- Interactive Filter Script -->
+  <!-- Lightbox Modal for Inspecting Designs & Photos -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-ink/90 hidden items-center justify-center p-4" onclick="closeLightbox()">
+    <button class="absolute top-6 right-6 text-white text-3xl font-light hover:text-crimson">&times;</button>
+    <img id="lightbox-img" src="" alt="Expanded Preview" class="max-h-[90vh] max-w-[90vw] object-contain border border-white/20 shadow-2xl" />
+  </div>
+
   <script>
-    function filterProjects(category) {
-      const cards = document.querySelectorAll('.project-card');
+    function filterProjects(category, btnElement) {
+      const items = document.querySelectorAll('.project-item');
       const buttons = document.querySelectorAll('.filter-btn');
 
       buttons.forEach(btn => {
-        btn.classList.remove('bg-brand-navy', 'text-white');
-        btn.classList.add('bg-white', 'text-slate-700');
+        btn.classList.remove('bg-ink', 'text-paper');
+        btn.classList.add('border', 'border-ink/30', 'text-ink');
       });
-      event.target.classList.remove('bg-white', 'text-slate-700');
-      event.target.classList.add('bg-brand-navy', 'text-white');
+      btnElement.classList.remove('border', 'border-ink/30', 'text-ink');
+      btnElement.classList.add('bg-ink', 'text-paper');
 
-      cards.forEach(card => {
-        const categories = card.getAttribute('data-category');
+      items.forEach(item => {
+        const categories = item.getAttribute('data-category');
         if (category === 'all' || categories.includes(category)) {
-          card.style.display = 'flex';
+          item.style.display = 'grid';
         } else {
-          card.style.display = 'none';
+          item.style.display = 'none';
         }
       });
+    }
+
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
     }
   </script>
 </body>
